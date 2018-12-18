@@ -57,13 +57,13 @@ namespace DATOS
 
                 SqlParameter pid = new SqlParameter();
                 pid.ParameterName = "@idd";
-                pid.SqlDbType = SqlDbType.BigInt;
+                pid.SqlDbType = SqlDbType.Int;
                 pid.Direction = ParameterDirection.Output;
                 SqlCmd.Parameters.Add(pid);
 
                 SqlParameter pidpersona = new SqlParameter();
                 pidpersona.ParameterName = "@id_p";
-                pidpersona.SqlDbType = SqlDbType.BigInt;
+                pidpersona.SqlDbType = SqlDbType.Int;
                 pidpersona.Value = dDireccion.Id_persona;
                 SqlCmd.Parameters.Add(pidpersona);
 

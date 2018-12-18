@@ -8,23 +8,23 @@ using System.Threading.Tasks;
 
 namespace DATOS
 {
-    public class DNmero
+    public class DNumero
     {
-        private long idceltel;
-        private long idpersona;
+        private int idceltel;
+        private int idpersona;
         private long celular;
         private long telefono;
 
-        public long Idceltel { get => idceltel; set => idceltel = value; }
-        public long Idpersona { get => idpersona; set => idpersona = value; }
+        public int Idceltel { get => idceltel; set => idceltel = value; }
+        public int Idpersona { get => idpersona; set => idpersona = value; }
         public long Celular { get => celular; set => celular = value; }
         public long Telefono { get => telefono; set => telefono = value; }
 
-        public DNmero()
+        public DNumero()
         {
         }
 
-        public DNmero(long idceltel, long idpersona, long celular,long telefono)
+        public DNumero(int idceltel, int idpersona, long celular,long telefono)
         {
             Idceltel = idceltel;
             Idpersona = idpersona;
@@ -32,7 +32,7 @@ namespace DATOS
             Telefono = telefono;
         }
 
-        public string Insertar(DNmero dNum, ref SqlConnection SqlCon, ref SqlTransaction SqlTra)
+        public string Insertar(DNumero dNum, ref SqlConnection SqlCon, ref SqlTransaction SqlTra)
         {
             string rpta = "";
             try
@@ -47,7 +47,7 @@ namespace DATOS
 
                 SqlParameter pid = new SqlParameter();
                 pid.ParameterName = "@idn";
-                pid.SqlDbType = SqlDbType.BigInt;
+                pid.SqlDbType = SqlDbType.Int;
                 pid.Direction = ParameterDirection.Output;
                 SqlCmd.Parameters.Add(pid);
 

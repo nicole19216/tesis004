@@ -10,7 +10,7 @@ namespace DATOS
 {
     public class DPersona
     {
-        private long id_persona;
+        private int id_persona;
         private string ci;
         private string nombre;
         private string email;
@@ -22,7 +22,7 @@ namespace DATOS
         {
         }
 
-        public DPersona(long id_persona, string ci, string nombre, string email, DateTime nacimiento, long nit, byte[] imagen)
+        public DPersona(int id_persona, string ci, string nombre, string email, DateTime nacimiento, long nit, byte[] imagen)
         {
             Id_persona = id_persona;
             Ci = ci;
@@ -33,7 +33,7 @@ namespace DATOS
             Imagen = imagen;
         }
 
-        public long Id_persona { get => id_persona; set => id_persona = value; }
+        public int Id_persona { get => id_persona; set => id_persona = value; }
         public string Ci { get => ci; set => ci = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public string Email { get => email; set => email = value; }
@@ -41,7 +41,7 @@ namespace DATOS
         public long Nit { get => nit; set => nit = value; }
         public byte[] Imagen { get => imagen; set => imagen = value; }
 
-        public string Insertar(DPersona Persona, List<DNmero> Numtel, List<DDireccion> Direccion
+        public string Insertar(DPersona Persona, List<DNumero> Numtel, List<DDireccion> Direccion
             , ref SqlConnection SqlCon, ref SqlTransaction SqlTra)
         {
             int flag = 0;
@@ -56,7 +56,7 @@ namespace DATOS
 
                 SqlParameter pid = new SqlParameter();
                 pid.ParameterName = "@idp";
-                pid.SqlDbType = SqlDbType.BigInt;
+                pid.SqlDbType = SqlDbType.Int;
                 pid.Direction = ParameterDirection.Output;
                 sqlCommand.Parameters.Add(pid);
 
@@ -106,9 +106,9 @@ namespace DATOS
                 if (rpta.Equals("OK"))
                 {
                     //Obtener el código del ingreso generado
-                    this.Id_persona = Convert.ToInt64(sqlCommand.Parameters["@id_persona"].Value);
+                    this.Id_persona = Convert.ToInt32(sqlCommand.Parameters["@id_persona"].Value);
 
-                    foreach (DNmero nt in Numtel)
+                    foreach (DNumero nt in Numtel)
                     {
                         nt.Idpersona = this.Id_persona;
                         rpta = nt.Insertar(nt, ref SqlCon, ref SqlTra);
