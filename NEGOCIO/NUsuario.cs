@@ -39,8 +39,8 @@ namespace NEGOCIO
             foreach (DataRow fila in dtnum.Rows)
             {
                 DNumero dNum = new DNumero();
-                dNum.Celular = Convert.ToInt32(fila["celular"].ToString());
-                dNum.Telefono = Convert.ToInt32(fila["telefono"].ToString());
+                dNum.Celular = Convert.ToInt64(fila["celular"].ToString());
+                dNum.Telefono = Convert.ToInt64(fila["telefono"].ToString());
                 dNums.Add(dNum);
             }
             List<DDireccion> dDireccions = new List<DDireccion>();
@@ -50,9 +50,8 @@ namespace NEGOCIO
                 dDireccion.Pais = Convert.ToString(fila["pais"].ToString());
                 dDireccion.Departamento = Convert.ToString(fila["departamento"].ToString());
                 dDireccion.Provincia = Convert.ToString(fila["provincia"].ToString());
+                dDireccion.Municipio = Convert.ToString(fila["municipio"].ToString());
                 dDireccion.Direccion = Convert.ToString(fila["direccion"].ToString());
-                dDireccion.Descripcion = Convert.ToString(fila["descripcion"].ToString());
-                dDireccion.Estado = Convert.ToBoolean(fila["estado"]);
                 dDireccions.Add(dDireccion);
             }
 

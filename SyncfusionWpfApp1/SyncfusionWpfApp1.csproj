@@ -87,6 +87,9 @@
     <Compile Include="PROVEEDOR\CrearP.xaml.cs">
       <DependentUpon>CrearP.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ROL\CrearR.xaml.cs">
+      <DependentUpon>CrearR.xaml</DependentUpon>
+    </Compile>
     <Compile Include="USUARIO\CrearU.xaml.cs">
       <DependentUpon>CrearU.xaml</DependentUpon>
     </Compile>
@@ -122,6 +125,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PROVEEDOR\CrearP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ROL\CrearR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
