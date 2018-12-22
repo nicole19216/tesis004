@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace DATOS
 {
-    public class DRolprivilegio
+    public class DRolPrivilegio
     {
         private int id_rolprivilegio;
         private int id_rol;
         private int id_privilegio;
         private bool estado;
 
-        public DRolprivilegio()
+        public DRolPrivilegio()
         {
         }
 
-        public DRolprivilegio(int id_rolprivilegio, int id_rol, int id_privilegio, bool estado)
+        public DRolPrivilegio(int id_rolprivilegio, int id_rol, int id_privilegio, bool estado)
         {
             Id_rolprivilegio = id_rolprivilegio;
             Id_rol = id_rol;
@@ -32,7 +32,7 @@ namespace DATOS
         public int Id_privilegio { get => id_privilegio; set => id_privilegio = value; }
         public bool Estado { get => estado; set => estado = value; }
 
-        public string Insertar(List<DRolprivilegio> dRolprivilegios)
+        public string Insertar(List<DRolPrivilegio> dRolprivilegios)
         {
             string rpta = "";
             SqlConnection SqlCon = new SqlConnection(); ;
@@ -41,7 +41,7 @@ namespace DATOS
                 SqlCon.ConnectionString = Conexion.CadCon;
                 SqlCon.Open();
                 //recorrer objetos de la lista
-                foreach (DRolprivilegio rolpri in dRolprivilegios)
+                foreach (DRolPrivilegio rolpri in dRolprivilegios)
                 {
                     try
                     {
