@@ -12,8 +12,9 @@
         <Label Content="Nombre" Margin="20,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
         <syncfusion:ComboBoxAdv HorizontalAlignment="Left" Height="27" Margin="107,170,0,0" VerticalAlignment="Top" Width="648" FontWeight="Light" FontSize="15"
                                 syncfusion:SkinStorage.VisualStyle="Metro" DefaultText="Despliega y selecciona un item de la lista"/>
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="761,170,0,0" Height="27" Width="90" Background="#039be5" 
-                syncfusion:SkinStorage.VisualStyle="Metro" Content="Seleccionar" Foreground="White" FontSize="15" FontWeight="Medium"/>
+        <Button x:Name="buttonseleccionar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="761,170,0,0" Height="27" Width="90"
+                Background="#039be5" syncfusion:SkinStorage.VisualStyle="Metro" Content="Seleccionar" Foreground="White" FontSize="15"
+                Click="Buttonseleccionar_Click" FontWeight="Medium"/>
 
         <syncfusion:TabControlExt Height="413" VerticalAlignment="Top" TabItemLayout="SingleLine" BorderBrush="White" CloseButtonType="Hide" ShowTabListContextMenu="False"
                                   syncfusion:SkinStorage.VisualStyle="Metro" Margin="0,234,0,0" TabPanelBackground="White" TabItemSelectedBorderBrush="#039be5">

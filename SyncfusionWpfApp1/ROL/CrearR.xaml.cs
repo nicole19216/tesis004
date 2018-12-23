@@ -23,5 +23,10 @@ namespace SyncfusionWpfApp1.ROL
         {
             InitializeComponent();
         }
+
+        private void Buttonseleccionar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -35,7 +35,8 @@
                         <Label Content="Direccion" Margin="20,225,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
                         <TextBox x:Name="textdireccion" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,225,0,0" Width="498" Height="27"/>
                         <Label Content="Fecha de Nacimiento" Margin="20,265,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <Button x:Name="buttonguardar1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="248,335,250,0" Height="37" Width="120" Background="#039be5">
+                        <Button x:Name="buttonguardar1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="248,335,250,0" Height="37"
+                                Click="Buttonguardar1_Click" Width="120" Background="#039be5">
                             <Button.Content>
                                 <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
                             </Button.Content>
@@ -44,7 +45,8 @@
                                 Background="#039be5" Click="Buttonagregartelefono_Click">
                             <Image Source="/RECURSOS/ICONOS/icons8_Subtract_100px.png"/>
                         </Button>
-                        <Button x:Name="buttonagregarcelular" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="559,185,0,0" Height="27" Width="27" Background="#039be5">
+                        <Button x:Name="buttonagregarcelular" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="559,185,0,0" Height="27"
+                                Click="Buttonagregarcelular_Click" Width="27" Background="#039be5">
                             <Image Source="/RECURSOS/ICONOS/icons8_Plus_Math_100px.png"/>
                         </Button>
                         <Label Content="Ci" Margin="410,265,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
@@ -52,7 +54,7 @@
                         <syncfusion:ComboBoxAdv x:Name="combotelefono" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,185,0,0" Width="160" Height="27"
                                                 IsEditable="True"/>
                         <syncfusion:ComboBoxAdv x:Name="combocelular" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="399,185,0,0" Width="160" Height="27"
-                                                IsEditable="False"/>
+                                                IsEditable="True"/>
                         <syncfusion:DateTimeEdit x:Name="datefecha" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="199,265,0,0" Width="195" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" HorizontalContentAlignment="Center"/>
                         <Button x:Name="buttonagregartelefono" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="274,185,0,0" Height="27" Width="27"
                             Background="#039be5" Click="Buttonagregartelefono_Click">
@@ -62,8 +64,8 @@
                             Background="#039be5" Click="Buttonquitartelefono__Click">
                             <Image Source="/SyncfusionWpfApp1;component/RECURSOS/ICONOS/icons8_Subtract_100px.png"/>
                         </Button>
-                        <Button x:Name="buttonquitarcelular" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,185,0,0" Height="27" Width="27"
-                            Background="#039be5" Click="Buttonagregartelefono_Click">
+                        <Button x:Name="buttonquitarcelular" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="585,185,0,0" Height="27"
+                                Click="Buttonquitarcelular_Click" Width="27" Background="#039be5">
                             <Image Source="/SyncfusionWpfApp1;component/RECURSOS/ICONOS/icons8_Subtract_100px.png"/>
                         </Button>
                     </Grid>
@@ -77,17 +79,18 @@
                         <Label Content="Contraseña" Margin="157,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
                         <Label Content="Confirmar" Margin="157,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
                         <Label Content="Rol" Margin="157,240,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <Button x:Name="buttonagregarrol" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,270,0,0" Height="27" Width="27" Background="#039be5">
+                        <Button x:Name="buttonagregarrol" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="422,270,0,0" Height="27"
+                                Click="Buttonagregarrol_Click" Width="27" Background="#039be5">
                             <Button.Content>
                                 <Image Source="/RECURSOS/ICONOS/icons8_Plus_Math_100px.png"/>
                             </Button.Content>
                         </Button>
-                        <Button x:Name="buttonguardar2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="248,335,250,0" Height="37" Width="120" Background="#039be5">
-                            <Button.Content>
-                                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-                            </Button.Content>
+                        <Button x:Name="buttonguardar2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="248,335,250,0" Height="37"
+                                Click="Buttonguardar2_Click" Width="120" Background="#039be5">
+                            <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
                         </Button>
-                        <Button x:Name="buttonquitarrol" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="452,270,0,0" Height="27" Width="27" Background="GreenYellow">
+                        <Button x:Name="buttonquitarrol" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="452,270,0,0" Height="27"
+                                Click="Buttonquitarrol_Click" Width="27" Background="GreenYellow">
                             <Image Source="/RECURSOS/ICONOS/icons8_Subtract_100px.png"/>
                         </Button>
                         <PasswordBox x:Name="textcontraseña" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="156,130,0,0" Width="323" Height="27"/>
