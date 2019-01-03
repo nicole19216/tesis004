@@ -96,7 +96,7 @@
                         <PasswordBox x:Name="textcontraseña" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="156,130,0,0" Width="323" Height="27"/>
                         <PasswordBox x:Name="textcontraseñaconfirmar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="156,200,0,0" Width="323" Height="27"/>
                         <syncfusion:ComboBoxAdv x:Name="comborol" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="156,270,0,0" Width="263" Height="27"
-                                                IsEditable="False"/>
+                                                IsEditable="False" DisplayMemberPath="nombre" SelectedValuePath="id"/>
                     </Grid>
                 </Border>
             </syncfusion:TabItemExt>

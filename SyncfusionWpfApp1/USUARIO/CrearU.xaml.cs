@@ -25,6 +25,10 @@ namespace SyncfusionWpfApp1.USUARIO
         private DataTable dtdireccion;
         private DataTable dtrolusuario;
 
+        ROL.CrearR CrearR = new ROL.CrearR();
+
+        
+
         private void Crear_tabla()
         {
             dtnumero = new DataTable("Dtnumero");
@@ -37,11 +41,10 @@ namespace SyncfusionWpfApp1.USUARIO
             dtdireccion.Columns.Add("provincia", System.Type.GetType("System.String"));
             dtdireccion.Columns.Add("municipio", System.Type.GetType("System.String"));
             dtdireccion.Columns.Add("direccion", System.Type.GetType("System.String"));
-            
 
             dtrolusuario = new DataTable("Dtrol");
             dtrolusuario.Columns.Add("id", Type.GetType("System.Int32"));
-            dtrolusuario.Columns.Add("rol", Type.GetType("System.String"));
+            dtrolusuario.Columns.Add("nombre", Type.GetType("System.String"));
             dtrolusuario.Columns.Add("estado", Type.GetType("System.Boolean"));
         }
 
@@ -129,8 +132,63 @@ namespace SyncfusionWpfApp1.USUARIO
 
         private void Buttonagregarrol_Click(object sender, RoutedEventArgs e)
         {
-            ROL.CrearR CrearR = new ROL.CrearR();
-            CrearR.ShowDialog();
+            try
+            {
+                //Si la ventana hija -Agregar- existe, le añadimos un evento y mostramos la Ventana
+                //El evento disparará cuando el usuario presione el Boton_Agregar de la Ventana Hija
+                //a continuación se ejecutará el método ag_AgregarEventHandler que actualizara el Grid
+                CrearR.AgregarEventHandler += new RoutedEventHandler(CrearR_AgregarEventHandler);
+                CrearR.ShowDialog();
+            }
+            catch
+            {
+                //Si la ventana hija -Agregar- no existe, la volvemos a referenciar y le añadimos un 
+                //evento y mostramos la Ventana. El evento disparará cuando el usuario presione el 
+                //Boton_Agregar de la Ventana Hija, a continuación se ejecutará el método 
+                //ag_AgregarEventHandler que actualizara el Grid
+                CrearR = new ROL.CrearR();
+                CrearR.AgregarEventHandler += new RoutedEventHandler(CrearR_AgregarEventHandler);
+                CrearR.ShowDialog();
+            }
+
+
+            //ROL.CrearR CrearR = new ROL.CrearR();
+            //CrearR.ShowDialog();
+        }
+
+        private void CrearR_AgregarEventHandler(object sender, RoutedEventArgs e)
+        {
+            //ComboBoxItem item = new ComboBoxItem();
+            //item.Content = CrearR.comborol.Text;
+            //item.
+
+            //comborol.Items.Add(CrearR.comborol.SelectedItem);
+            //MessageBox.Show(CrearR.comborol.SelectedValue.ToString());
+
+
+            bool agregar = true;
+            foreach (DataRow item in dtrolusuario.Rows)
+            {
+                if (item["nombre"].Equals(CrearR.comborol.Text))
+                {
+                    MessageBox.Show("Rol ya agregado");
+                    agregar = false;
+                }
+            }
+            if (agregar)
+            {
+                bool valor = false;
+                DataRow row = dtrolusuario.NewRow();
+                row["id"] = Convert.ToInt32(CrearR.comborol.SelectedValue);
+                row["nombre"] = CrearR.comborol.Text;
+                if (CrearR.checrol.IsChecked == true)
+                    valor = true;
+                else
+                    valor = false;
+                row["estado"] = valor;
+                dtrolusuario.Rows.Add(row);
+                comborol.ItemsSource = dtrolusuario.DefaultView;
+            }
         }
 
         private void Buttonquitarrol_Click(object sender, RoutedEventArgs e)

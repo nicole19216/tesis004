@@ -194,5 +194,11 @@
   <ItemGroup>
     <Resource Include="RECURSOS\ICONOS\icons8_Trolley_100px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NEGOCIO\NEGOCIO.csproj">
+      <Project>{c72b96d6-8de3-41ba-a179-62077eedee62}</Project>
+      <Name>NEGOCIO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

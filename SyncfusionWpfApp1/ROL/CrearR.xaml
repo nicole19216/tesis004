@@ -6,22 +6,34 @@
         xmlns:local="clr-namespace:SyncfusionWpfApp1.ROL"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
-        Title="CrearR" Height="772" Width="983">
+        Title="CrearR" Height="640" Width="983">
     <Grid>
         <Image Source="/RECURSOS/ICONOS/icons8_Workspace_100px.png" Width="130" Height="130" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="257,-11,257,0"/>
+        <TextBox x:Name="textnombre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,170,0,0" Width="436" Height="27"
+                 Visibility="Collapsed"/>
         <Label Content="Nombre" Margin="20,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-        <syncfusion:ComboBoxAdv HorizontalAlignment="Left" Height="27" Margin="107,170,0,0" VerticalAlignment="Top" Width="648" FontWeight="Light" FontSize="15"
-                                syncfusion:SkinStorage.VisualStyle="Metro" DefaultText="Despliega y selecciona un item de la lista"/>
-        <Button x:Name="buttonseleccionar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="761,170,0,0" Height="27" Width="90"
+        <syncfusion:ComboBoxAdv HorizontalAlignment="Left" Height="27" Margin="107,170,0,0" VerticalAlignment="Top" Width="436" FontWeight="Light"
+                                FontSize="15" syncfusion:SkinStorage.VisualStyle="Metro" DefaultText="Despliega y selecciona un item de la lista"
+                                x:Name="comborol" IsEditable="False" DisplayMemberPath="NOMBRE" SelectedValuePath="ID" SelectionChanged="Comborol_SelectionChanged"/>
+        <Button x:Name="buttonseleccionar" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="705,170,0,0" Height="27" Width="90"
                 Background="#039be5" syncfusion:SkinStorage.VisualStyle="Metro" Content="Seleccionar" Foreground="White" FontSize="15"
                 Click="Buttonseleccionar_Click" FontWeight="Medium"/>
 
-        <syncfusion:TabControlExt Height="413" VerticalAlignment="Top" TabItemLayout="SingleLine" BorderBrush="White" CloseButtonType="Hide" ShowTabListContextMenu="False"
-                                  syncfusion:SkinStorage.VisualStyle="Metro" Margin="0,234,0,0" TabPanelBackground="White" TabItemSelectedBorderBrush="#039be5">
-            <syncfusion:TabItemExt Header="Datos Basicos" IsNewTab="False" MinWidth="150" MinHeight="20" Padding="0">
-                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-97">
-                    <Grid>
-                        <CheckBox IsChecked="True" Margin="288,25,303,0" VerticalAlignment="Top" x:Name="ChecUsuario" Height="16">
+        <syncfusion:TabControlExt Height="375" VerticalAlignment="Top" TabItemLayout="SingleLine" BorderBrush="White" CloseButtonType="Hide"
+                                  ShowTabListContextMenu="False" syncfusion:SkinStorage.VisualStyle="Metro" Margin="0,234,0,0"
+                                  TabPanelBackground="White" TabItemSelectedBorderBrush="#039be5" x:Name="tabcontrolrol">
+            <syncfusion:TabItemExt Header="Usuario" IsNewTab="False" MinWidth="150" MinHeight="20" Padding="0" x:Name="Usuarios">
+                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-3" x:Name="borderusuario">
+                    <WrapPanel Orientation="Vertical" x:Name="wrapusuario">
+                        <WrapPanel.Resources>
+                            <Style TargetType="{x:Type CheckBox}">
+                                <Setter Property="Margin" Value="20,20" />
+                                <Setter Property="Padding" Value="10,10" />
+                            </Style>
+                        </WrapPanel.Resources>
+                    </WrapPanel>
+                    <!--<Grid x:Name="gridusuario">
+                        <CheckBox IsChecked="True" Margin="288,25,663,0" VerticalAlignment="Top" x:Name="ChecUsuario" Height="16">
                             <CheckBox.LayoutTransform>
                                 <ScaleTransform ScaleX="1.6" ScaleY="1.6"/>
                             </CheckBox.LayoutTransform>
@@ -66,7 +78,7 @@
                         </Button>
                         <Label Content="Ci" Margin="410,265,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
                         <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="450,265,0,0" Width="162" Height="27"/>
-                    </Grid>
+                    </Grid>-->
                 </Border>
             </syncfusion:TabItemExt>
             <syncfusion:TabItemExt Header="Datos de Acceso" MinHeight="20" MinWidth="150">
@@ -94,8 +106,20 @@
             <syncfusion:TabItemExt Header="Datos de Acceso" MinHeight="20" MinWidth="150"/>
         </syncfusion:TabControlExt>
 
-        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="857,170,0,0" Height="27" Width="90" Background="#039be5" syncfusion:SkinStorage.VisualStyle="Metro"
-                 Content="Nuevo" Foreground="White" FontSize="15" FontWeight="Medium"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="798,170,0,0" Height="27" Width="90" Background="#039be5" syncfusion:SkinStorage.VisualStyle="Metro"
+                 Content="Nuevo" Foreground="White" FontSize="15" FontWeight="Medium" x:Name="buttonNuevorol" Click="ButtonNuevorol_Click"/>
+        <TextBox x:Name="textrolnombre" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="107,170,0,0" Width="436" Height="27"
+                 Visibility="Collapsed"/>
+        <CheckBox IsChecked="True" Margin="564,172,378,0" VerticalAlignment="Top" x:Name="checrol" Height="16">
+            <CheckBox.LayoutTransform>
+                <ScaleTransform ScaleX="1.6" ScaleY="1.6"/>
+            </CheckBox.LayoutTransform>
+        </CheckBox>
+        <Label Content="Activo" Margin="610,170,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
+        <Grid Margin="0,234,0,0" Background="Black" Opacity="0.6" Visibility="Collapsed" x:Name="gridocultar"/>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="705,170,0,0" Height="27" Width="183" Background="#039be5" syncfusion:SkinStorage.VisualStyle="Metro"
+            Content="Guardar" Foreground="White" FontSize="15" FontWeight="Medium" x:Name="buttonguardar" Click="Buttonguardar_Click"
+                Visibility="Collapsed"/>
 
 
     </Grid>
