@@ -17,7 +17,7 @@ namespace SyncfusionWpfApp1.COMPRA
     /// <summary>
     /// Lógica de interacción para CrearC.xaml
     /// </summary>
-    public partial class CrearC : Window
+    public partial class CrearC : Page
     {
         public CrearC()
         {

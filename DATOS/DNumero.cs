@@ -73,7 +73,6 @@ namespace DATOS
 
                 rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
 
-
             }
             catch (Exception ex)
             {

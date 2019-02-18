@@ -1,86 +1,45 @@
-﻿<Window x:Class="SyncfusionWpfApp1.COMPRA.CrearC"
+﻿<Page x:Class="SyncfusionWpfApp1.COMPRA.CrearC"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyncfusionWpfApp1.COMPRA"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CrearC" Height="667" Width="903">
-    <Grid VerticalAlignment="Bottom" Margin="0,0,0,1" Height="456">
-        <Image Source="/RECURSOS/ICONOS/icons8_Buying_100px.png" Width="130" Height="130" Margin="386,-178,379,504"/>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="755,117,77,0" Height="27" Width="63" Background="#03A9F4">
-            <Button.Content>
-                <Image Source="/RECURSOS/ICONOS/icons8_Plus_Math_100px.png"/>
-            </Button.Content>
-        </Button>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="822,117,10,0" Height="27" Width="63" Background="#03A9F4">
-            <Button.Content>
-                <Image Source="/RECURSOS/ICONOS/icons8_Subtract_100px.png"/>
-            </Button.Content>
-        </Button>
-        <Label Content="Proveedor" Margin="20,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="134,60,0,0" Width="741" Height="27"/>
-        <Label Content="N. Factura" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="134,20,0,0" Width="220" Height="27"/>
-        <Label Content="Fecha" Margin="584,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="670,20,0,0" Width="205" Height="27"/>
-        <Grid Height="29" Margin="15,132,10,258" Background="#03A9F4">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="163*"/>
-                <ColumnDefinition Width="147*"/>
-                <ColumnDefinition Width="94*"/>
-                <ColumnDefinition Width="134*"/>
-                <ColumnDefinition Width="113*"/>
-                <ColumnDefinition Width="109*"/>
-                <ColumnDefinition Width="110*"/>
-            </Grid.ColumnDefinitions>
-            <Label Content="Producto" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Height="27" FontWeight="Medium" Margin="54,0,49,0" Width="60" Foreground="White"/>
-            <Label Content="Unidad Compra" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="1" FontWeight="Medium" Margin="24,0,27,0" Width="96" Foreground="White"/>
-            <Label Content="Cantidad" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="2" FontWeight="Medium" Margin="18,0,16,0" Width="60" Foreground="White"/>
-            <Label Content="Unidades contenidas" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="3" FontWeight="Medium" Width="124" Margin="6,0,4,0" Foreground="White"/>
-            <Label Content="Precio Actual" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="4" FontWeight="Medium" Margin="16,0,17,0" Width="80" Foreground="White"/>
-            <Label Content="Precio Nuevo" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="5" FontWeight="Medium" Margin="15,0,12,0" Width="82" Foreground="White"/>
-            <Label Content="Costo Total" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="6" FontWeight="Medium" Margin="20,0" Width="70" Foreground="White"/>
-            <Grid Margin="-2,37,1,-37" Grid.ColumnSpan="7">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="166*"/>
-                    <ColumnDefinition Width="140*"/>
-                    <ColumnDefinition Width="100*"/>
-                    <ColumnDefinition Width="135*"/>
-                    <ColumnDefinition Width="112*"/>
-                    <ColumnDefinition Width="111*"/>
-                    <ColumnDefinition Width="107*"/>
-                </Grid.ColumnDefinitions>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="0"/>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="1"/>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="2"/>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="3"/>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="4"/>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="5"/>
-                <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="6"/>
-                <syncfusion:SfDataGrid x:Name="DataGridNumero" ItemsSource="{Binding}" AutoGenerateColumns="False" ColumnSizer="Star" HorizontalAlignment="Stretch" Height="148"
-                          Visibility="Visible" Margin="6,35,2,-154" VerticalAlignment="Top" HeaderRowHeight="0" Grid.ColumnSpan="7">
-                    <syncfusion:SfDataGrid.Columns>
-                        <syncfusion:GridComboBoxColumn HeaderText="UNIDAD VENTA"/>
-                        <syncfusion:GridNumericColumn NumberDecimalDigits="0" HeaderText = "NUMERO" MappingName="numero"/>
-                        <syncfusion:GridTextColumn HeaderText = "DESCRIPCION" MappingName = "descripcion"/>
-                        <syncfusion:GridCheckBoxColumn HeaderText = "ESTADO" MappingName = "estado"/>
-                    </syncfusion:SfDataGrid.Columns>
-                </syncfusion:SfDataGrid>
-            </Grid>
-        </Grid>
-        <Label Content="Total" Margin="716,370,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-        <Label Content="$ 0,00" Margin="762,370,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium" Width="120" FlowDirection="RightToLeft"/>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="386,401,389,0" Height="37" Width="120" Background="#03A9F4">
-            <Button.Content>
-                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-            </Button.Content>
-        </Button>
-        <Label Content="Codigo Barras" Margin="15,115,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="134,118,0,0" Width="220" Height="27"/>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="358,118,504,0" Height="27" Width="33" Background="#03A9F4">
-            <Image Source="/SyncfusionWpfApp1;component/RECURSOS/ICONOS/icons8_Search_100px.png"/>
-        </Button>
+        Title="CrearC" MinHeight="512" MinWidth="1080">
+    <Page.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+    </Page.Resources>
+    <Grid VerticalAlignment="Bottom" Margin="0,0,0,1" Height="533">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="121*"/>
+            <RowDefinition Height="412*"/>
+        </Grid.RowDefinitions>
+        <Label Content="{materialDesign:PackIcon Kind=ProfessionalHexagon}" Margin="20,65,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,54,0,0" Width="1004" materialDesign:HintAssist.Hint="Proveedor" Height="37"/>
+        <Label Content="{materialDesign:PackIcon Kind=FileDocumentOutline}" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,7,0,0" Width="282" materialDesign:HintAssist.Hint="Numero Factura" Height="37"/>
+        <Label Content="{materialDesign:PackIcon Kind=DateRange}" Margin="0,20,257,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="26" Width="26"/>
+        <syncfusion:DateTimeEdit IsButtonPopUpEnabled="False" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" 
+                                         Pattern="CustomPattern" CustomPattern="dd/MM/yyyy" Visibility="Visible"
+                                         Margin="0,20,30,0" VerticalAlignment="Top" x:Name="fechaproduccion" 
+                                         DateTime="1993-09-05"
+                                         HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="222"/>
+
+        <syncfusion:SfDataGrid x:Name="DataGridNumero" ItemsSource="{Binding}" AutoGenerateColumns="False" 
+                                       ColumnSizer="AutoWithLastColumnFill" Visibility="Visible" HorizontalAlignment="Stretch"
+                                       Margin="10,0" VerticalAlignment="Top" Grid.Row="1" Height="26">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Producto" TextAlignment="Center"/>
+                <syncfusion:GridTextColumn HeaderText = "Unidad de Compra" TextAlignment="Center"/>
+                <syncfusion:GridTextColumn HeaderText = "Cantidad" TextAlignment="Center"/>
+                <syncfusion:GridTextColumn HeaderText = "Piezas Contenidas" TextAlignment="Center"/>
+                <syncfusion:GridTextColumn HeaderText = "Precio Actual" TextAlignment="Center"/>
+                <syncfusion:GridTextColumn HeaderText = "Precio Nuevo" TextAlignment="Center"/>
+                <syncfusion:GridTextColumn HeaderText = "Costo Total" TextAlignment="Center"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
     </Grid>
-</Window>
+</Page>

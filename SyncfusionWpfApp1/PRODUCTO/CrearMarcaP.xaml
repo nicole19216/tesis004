@@ -1,0 +1,15 @@
+﻿<Window x:Class="SyncfusionWpfApp1.PRODUCTO.CrearMarcaP"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SyncfusionWpfApp1.PRODUCTO"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="CrearMarcaP" Height="106.579" Width="461.361">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Height="auto" Width="196" Margin="46,14,0,0" materialDesign:HintAssist.Hint="Nombre" Name="textnombre"/>
+        <Button Content="Crear" HorizontalAlignment="Left" Margin="260,19,0,0" VerticalAlignment="Top" Name="buttoncrear" Click="Buttoncrear_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="331,19,0,0" VerticalAlignment="Top" Name="buttoncancelar" Click="Buttoncancelar_Click"/>
+    </Grid>
+</Window>

@@ -43,13 +43,25 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="DCategoria.cs" />
+    <Compile Include="DCategoriaProducto.cs" />
+    <Compile Include="DCliente.cs" />
+    <Compile Include="DCompra.cs" />
+    <Compile Include="DDetalleCompra.cs" />
     <Compile Include="DDireccion.cs" />
+    <Compile Include="DImagenes.cs" />
+    <Compile Include="DImpuesto.cs" />
+    <Compile Include="DMarca.cs" />
     <Compile Include="DModulo.cs" />
     <Compile Include="DNumero.cs" />
     <Compile Include="DPersona.cs" />
     <Compile Include="DPrivilegio.cs" />
+    <Compile Include="DProducto.cs" />
+    <Compile Include="DProveedor.cs" />
+    <Compile Include="DRepresentante.cs" />
     <Compile Include="DRol.cs" />
     <Compile Include="DRolPrivilegio.cs" />
+    <Compile Include="DUbicacion.cs" />
     <Compile Include="DUsuario.cs" />
     <Compile Include="DUsuariorol.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

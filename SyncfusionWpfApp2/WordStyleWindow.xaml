@@ -1,0 +1,53 @@
+<syncfusion:RibbonWindow x:Class="SyncfusionWpfApp2.WordStyleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:this="clr-namespace:SyncfusionWpfApp2"
+        xmlns:RichTextBoxAdv="clr-namespace:Syncfusion.Windows.Controls.RichTextBoxAdv;assembly=Syncfusion.SfRichTextBoxAdv.Wpf"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        Icon="App.ico" 
+        x:Name="ribbonWindow" Width="1087" Height="635"
+        WindowState="Normal" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top" Margin="0">
+                <syncfusion:Ribbon Name="ribbon">
+                    <syncfusion:RibbonTab  Caption="Usuario" IsChecked="False" >
+                        <syncfusion:RibbonBar  Header="Acions">
+                            <syncfusion:RibbonButton SizeForm="Small"  Label="Copy Folder"/>
+                            <syncfusion:RibbonButton SizeForm="Small" Label="Move Folder"/>
+                            <syncfusion:SplitButton  Label=" Split1 "   SizeForm="Large" >
+                                <syncfusion:RibbonButton SizeForm="Small"  Label="Mark to Download"/>
+                                <syncfusion:RibbonButton SizeForm="Small"  Label="UnMark to Download"/>
+                            </syncfusion:SplitButton>
+                        </syncfusion:RibbonBar>
+                        <syncfusion:RibbonBar Header="Properties">
+                            <syncfusion:RibbonButton SizeForm="Small" Label="Policy"/>
+                            <syncfusion:RibbonButton SizeForm="Small" Label="Folder Properties"/>
+                            <syncfusion:RibbonButton SizeForm="Small" Label="Folder Permissions"/>
+                        </syncfusion:RibbonBar>
+                        <syncfusion:RibbonBar Header="Usuarios" Name="SubMenuUsuario">
+                            <syncfusion:RibbonButton SizeForm="Large" Label="Crear"/>
+                            <syncfusion:RibbonButton SizeForm="Large" Label="Editar"/>
+                            <syncfusion:RibbonButton SizeForm="Large" Label="Eliminar"/>
+                        </syncfusion:RibbonBar>
+                        <syncfusion:RibbonBar Header="Rol/Permisos" Name="SubmenuRol">
+                            <syncfusion:RibbonButton SizeForm="Large" Label="Crear"/>
+                        </syncfusion:RibbonBar>
+                    </syncfusion:RibbonTab>
+                </syncfusion:Ribbon>
+            </Grid>
+            <Grid Background="LightGray">
+                <Border Background="White" Margin="5" CornerRadius="4" BorderBrush="LightGray" BorderThickness="1">
+                    <Grid>
+                        <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <Frame Name = "frameprincipal" />
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
+            </Grid>
+        </DockPanel>
+    </Grid>
+
+</syncfusion:RibbonWindow>

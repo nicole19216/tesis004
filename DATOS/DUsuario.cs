@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -99,7 +100,7 @@ namespace DATOS
                 if (rpta.Equals("OK"))
                 {
                     //Obtener el código del ingreso generado
-                    this.Id_usuario = Convert.ToInt32(SqlCmd.Parameters["@id_usuario"].Value);
+                    this.Id_usuario = Convert.ToInt32(SqlCmd.Parameters["@idu"].Value);
                     foreach (DUsuariorol ur in dUsuariorols)
                     {
                         ur.Idusuario = this.Id_usuario;

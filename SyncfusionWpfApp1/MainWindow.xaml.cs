@@ -19,6 +19,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Syncfusion.SfSkinManager;
+using Syncfusion.UI.Xaml.NavigationDrawer;
 
 namespace SyncfusionWpfApp1
 {
@@ -27,56 +28,71 @@ namespace SyncfusionWpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-		#region Fields
-        private string currentVisualStyle;
-        #endregion
+        //#region Fields
+        //private string currentVisualStyle;
+        //#endregion
 
-        #region Properties
-        /// <summary>
-        /// Gets or sets the current visual style.
-        /// </summary>
-        /// <value></value>
-        /// <remarks></remarks>
-        public string CurrentVisualStyle
-        {
-            get
-            {
-                return currentVisualStyle;
-            }
-            set
-            {
-                currentVisualStyle = value;
-                OnVisualStyleChanged();
-            }
-        }
-        #endregion
+        //#region Properties
+        ///// <summary>
+        ///// Gets or sets the current visual style.
+        ///// </summary>
+        ///// <value></value>
+        ///// <remarks></remarks>
+        //public string CurrentVisualStyle
+        //{
+        //    get
+        //    {
+        //        return currentVisualStyle;
+        //    }
+        //    set
+        //    {
+        //        currentVisualStyle = value;
+        //        OnVisualStyleChanged();
+        //    }
+        //}
+        //#endregion
+        ///// <summary>
+        //      /// Called when [loaded].
+        //      /// </summary>
+        //      /// <param name="sender">The sender.</param>
+        //      /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
+        //      private void OnLoaded(object sender, RoutedEventArgs e)
+        //      {
+        //          CurrentVisualStyle = "Office2016DarkGray";
+        //      }
+        ///// <summary>
+        //      /// On Visual Style Changed.
+        //      /// </summary>
+        //      /// <remarks></remarks>
+        //      private void OnVisualStyleChanged()
+        //      {
+        //          VisualStyles visualStyle = VisualStyles.Default;
+        //          Enum.TryParse(CurrentVisualStyle, out visualStyle);            
+        //          if (visualStyle != VisualStyles.Default)
+        //          {
+        //              SfSkinManager.ApplyStylesOnApplication = true;
+        //              SfSkinManager.SetVisualStyle(this, visualStyle);
+        //              SfSkinManager.ApplyStylesOnApplication = false;
+        //          }
+        //      }
+
         public MainWindow()
         {
             InitializeComponent();
-			this.Loaded += OnLoaded;
+            //this.Loaded += OnLoaded;
+            pagination.NavigationService.Navigate(new Uri("USUARIO/MainU.xaml", UriKind.Relative));
         }
-		/// <summary>
-        /// Called when [loaded].
-        /// </summary>
-        /// <param name="sender">The sender.</param>
-        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
-        private void OnLoaded(object sender, RoutedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            CurrentVisualStyle = "Office2016DarkGray";
-        }
-		/// <summary>
-        /// On Visual Style Changed.
-        /// </summary>
-        /// <remarks></remarks>
-        private void OnVisualStyleChanged()
-        {
-            VisualStyles visualStyle = VisualStyles.Default;
-            Enum.TryParse(CurrentVisualStyle, out visualStyle);            
-            if (visualStyle != VisualStyles.Default)
+            if (navdra != null)
             {
-                SfSkinManager.ApplyStylesOnApplication = true;
-                SfSkinManager.SetVisualStyle(this, visualStyle);
-                SfSkinManager.ApplyStylesOnApplication = false;
+                if (navdra.IsOpen)
+                    navdra.ToggleDrawer();
+                else
+                {
+                    navdra.ToggleDrawer();
+                }
             }
         }
     }

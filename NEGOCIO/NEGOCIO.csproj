@@ -42,10 +42,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="NCategoria.cs" />
+    <Compile Include="NCliente.cs" />
+    <Compile Include="NCompra.cs" />
+    <Compile Include="NImpuesto.cs" />
+    <Compile Include="NMarca.cs" />
     <Compile Include="NModulo.cs" />
     <Compile Include="NPrivilegio.cs" />
+    <Compile Include="NProducto.cs" />
+    <Compile Include="NProveedor.cs" />
+    <Compile Include="NRepresentante.cs" />
     <Compile Include="NRol.cs" />
     <Compile Include="NRolPrivilegio.cs" />
+    <Compile Include="NUbicacion.cs" />
     <Compile Include="NUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

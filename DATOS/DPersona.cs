@@ -15,14 +15,14 @@ namespace DATOS
         private string nombre;
         private string email;
         private DateTime nacimiento;
-        private long nit;
+        private string nit;
         private byte[] imagen;
 
         public DPersona()
         {
         }
 
-        public DPersona(int id_persona, string ci, string nombre, string email, DateTime nacimiento, long nit, byte[] imagen)
+        public DPersona(int id_persona, string ci, string nombre, string email, DateTime nacimiento, string nit, byte[] imagen)
         {
             Id_persona = id_persona;
             Ci = ci;
@@ -38,7 +38,7 @@ namespace DATOS
         public string Nombre { get => nombre; set => nombre = value; }
         public string Email { get => email; set => email = value; }
         public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
-        public long Nit { get => nit; set => nit = value; }
+        public string Nit { get => nit; set => nit = value; }
         public byte[] Imagen { get => imagen; set => imagen = value; }
 
         public string Insertar(DPersona Persona, List<DNumero> Numtel, List<DDireccion> Direccion
@@ -89,14 +89,18 @@ namespace DATOS
 
                 SqlParameter pnit = new SqlParameter();
                 pnit.ParameterName = "@nit";
-                pnit.SqlDbType = SqlDbType.BigInt;
+                pnit.SqlDbType = SqlDbType.VarChar;
+                pnit.Size = 30;
                 pnit.Value = Persona.Nit;
                 sqlCommand.Parameters.Add(pnit);
 
                 SqlParameter pimagen = new SqlParameter();
                 pimagen.ParameterName = "@imagen";
                 pimagen.SqlDbType = SqlDbType.Image;
-                pimagen.Value = Persona.Imagen;
+                if (Persona.Imagen==null)
+                    pimagen.Value = DBNull.Value;
+                else
+                    pimagen.Value = Persona.Imagen;
                 sqlCommand.Parameters.Add(pimagen);
 
                 //Ejecutamos nuestro comando
@@ -106,7 +110,7 @@ namespace DATOS
                 if (rpta.Equals("OK"))
                 {
                     //Obtener el código del ingreso generado
-                    this.Id_persona = Convert.ToInt32(sqlCommand.Parameters["@id_persona"].Value);
+                    this.Id_persona = Convert.ToInt32(sqlCommand.Parameters["@idp"].Value);
 
                     foreach (DNumero nt in Numtel)
                     {

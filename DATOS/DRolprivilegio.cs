@@ -108,7 +108,7 @@ namespace DATOS
                 SqlCon.ConnectionString = Conexion.CadCon;
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
-                SqlCmd.CommandText = "metmostrar_rolprivilegio";
+                SqlCmd.CommandText = "pListarRolPrivilegio";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);

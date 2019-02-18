@@ -11,7 +11,8 @@ namespace NEGOCIO
 {
     public class NUsuario
     {
-        public static string Insertar(string ci, string nombre, string email, DateTime fecha, long nit,
+
+        public static string Insertar(string ci, string nombre, string email, DateTime fecha, string nit,
             DataTable dtnum, DataTable dtdir, string usuario, string contraseña, bool estado, DataTable dtrolusu, byte[] imagen)
         {
             DPersona dPersona = new DPersona();
@@ -61,11 +62,6 @@ namespace NEGOCIO
         public static DataTable Mostrar()
         {
             return new DUsuario().Mostrar();
-        }
-
-        public static DataView MostrarView()
-        {
-            return new DUsuario().Mostrar().DefaultView;
         }
     }
 }

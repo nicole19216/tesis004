@@ -5,119 +5,181 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyncfusionWpfApp1.CLIENTE"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CrearC" Height="689" Width="644">
+        Title="CrearC" Height="690" Width="444">
+    <Window.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+    </Window.Resources>
     <Grid>
-        <Image Source="/RECURSOS/ICONOS/icons8_Profile_100px.png" Width="130" Height="130" Margin="257,2,257,523"/>
-        <syncfusion:TabControlExt Height="483" VerticalAlignment="Top" TabItemLayout="SingleLine" BorderBrush="White" CloseButtonType="Hide" ShowTabListContextMenu="False"
-                                  syncfusion:SkinStorage.VisualStyle="Metro" Margin="0,172,0,0" TabPanelBackground="White" TabItemSelectedBorderBrush="#039be5">
-            <syncfusion:TabItemExt Header="Empresa">
-                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="448*"/>
+            <RowDefinition Height="96*"/>
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="158,0,162,0" Height="75" Width="116">
+            <Label.Content>
+                <materialDesign:PackIcon Kind="Face" Height="65" Width="106"/>
+            </Label.Content>
+        </Label>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Height="40" Width="271" Grid.RowSpan="2">
+            <RadioButton x:Name="tabentidad" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" Content="Entidad" Checked="Tabentidad_Checked"/>
+            <RadioButton x:Name="tabpersona" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" Content="Persona" Checked="Tabpersona_Checked"/>
+        </StackPanel>
+        <Border x:Name="borderemp" Grid.Row="2" BorderThickness="0,1,0,0" Margin="-3,0" Visibility="Collapsed">
+            <Grid>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Deshabilitado" Foreground="Gray" Margin="0,41,69,0" Width="101"
+                       HorizontalContentAlignment="Right" Name="labelentidad"/>
+                <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Top"
+                              HorizontalAlignment="Right" Margin="0,45,29,0" Name="toggleent"/>
+                <Label Content="{materialDesign:PackIcon Kind=User}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,80,0,0"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="358" Margin="55,69,0,0"
+                         materialDesign:HintAssist.Hint="Nombre" Name="textnombreentidad"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="358" Margin="55,114,0,0"
+                         materialDesign:HintAssist.Hint="NIT" Name="textnitentidad"/>
+                <Label Content="{materialDesign:PackIcon Kind=Phone}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,380,0,0"/>
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="107" Margin="55,364,0,0"                         materialDesign:HintAssist.Hint="Telefono" IsEditable="True" Name="combotelentidad"/>
+                <ListBox x:Name="listtelefonoentidad" HorizontalAlignment="Left" Height="auto" Margin="167,382,0,0"
+                         VerticalAlignment="Top" Width="auto" Padding="0" Style="{StaticResource MaterialDesignToolToggleListBox}"
+                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listtelefonoentidad_SelectionChanged">
+                    <ListBoxItem x:Name="itemtelentadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemtelentquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                </ListBox>
+                <Label Content="{materialDesign:PackIcon Kind=Cellphone}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="226,380,0,0"/>
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="107" Margin="257,364,0,0"
+                          materialDesign:HintAssist.Hint="Celular" IsEditable="True" Name="combocelentidad"/>
+                <ListBox x:Name="listcelularntidad" HorizontalAlignment="Left" Height="auto" Margin="369,382,0,0"
+                         VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}"
+                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listcelularntidad_SelectionChanged">
+                    <ListBoxItem x:Name="itemcelentadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemcelentquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                </ListBox>
+                <Label Content="{materialDesign:PackIcon Kind=IdentificationCard}" HorizontalAlignment="Left" VerticalAlignment="Top"   Margin="24,125,0,0"/>
+
+                <Label Content="{materialDesign:PackIcon Kind=Email}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,329,0,0"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="358" Margin="55,318,0,0"
+                         materialDesign:HintAssist.Hint="Email" Name="textemailentidad"/>
+
+                <Border BorderBrush="Silver" BorderThickness="1" HorizontalAlignment="Left" Height="152" Margin="55,159,0,0" VerticalAlignment="Top" Width="358" CornerRadius="8,8,3,3" Background="GhostWhite" IsEnabled="True" Name="borderdireccion">
                     <Grid>
-                        <CheckBox IsChecked="True" Margin="599,24,16,0" VerticalAlignment="Top" x:Name="ChecUsuario" Height="16">
-                            <CheckBox.LayoutTransform>
-                                <ScaleTransform ScaleX="1.6" ScaleY="1.6"/>
-                            </CheckBox.LayoutTransform>
-                        </CheckBox>
-                        <Label Content="Nombre" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,20,0,0"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="358" Margin="155,20,0,0"/>
-                        <Label Content="Razon Social" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,100,0,0"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="464" Margin="155,60,0,0"/>
-                        <Label Content="Direccion Fiscal" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,140,0,0"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="464" Margin="155,100,0,0"/>
-                        <Label Content="Telefono/s" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,300,0,0"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="150" Margin="156,300,0,0" Text="1234567890"/>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308,300,0,0" Height="27" Width="27" Background="#039be5">
-                            <Button.Content>
-                                <Image/>
-                            </Button.Content>
-                        </Button>
-                        <Label Content="Celular/s" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="353,300,0,0"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="150" Margin="441,300,0,0"/>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="593,300,0,0" Height="27" Width="27" Background="#039be5">
-                            <Image/>
-                        </Button>
-                        <Label Content="NIT" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,60,0,0" RenderTransformOrigin="0.824,-1.667"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="464" Margin="155,140,0,0"/>
-                        <Label Content="Pais" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,180,0,0"/>
-                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="180" Margin="155,180,0,0"/>
-                        <Label Content="Provincia" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="352,180,0,0"/>
-                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="180" Margin="439,180,0,0"/>
-                        <Label Content="Departamento" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,220,0,0"/>
-                        <Label Content="Municipio" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="352,220,0,0"/>
-                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="180" Margin="155,220,0,0"/>
-                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="180" Margin="439,220,0,0"/>
-                        <Label Content="Email" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="20,260,0,0"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="27" Width="464" Margin="156,260,0,0"/>
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="260,395,264,0" Height="36" Width="120" Background="#039be5">
-                            <Button.Content>
-                                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-                            </Button.Content>
-                        </Button>
-                        <Label Content="Estado" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" FontWeight="Medium" Foreground="Gray" Margin="531,20,0,0"/>
+                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="156" Margin="6,4,0,0"
+                          materialDesign:HintAssist.Hint="Pais" IsEditable="True" Name="combopaisentidad"/>
+                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="156" Margin="6,51,0,0"
+                          materialDesign:HintAssist.Hint="Departamento" IsEditable="True" Name="combodepentidad"/>
+                        <ComboBox HorizontalAlignment="Right" VerticalAlignment="Top" Height="auto" Width="156" Margin="0,4,6,0"
+                          materialDesign:HintAssist.Hint="Provincia" IsEditable="True" Name="comboprovinentidad"/>
+                        <ComboBox HorizontalAlignment="Right" VerticalAlignment="Top" Height="auto" Width="156" Margin="0,51,6,0"
+                          materialDesign:HintAssist.Hint="Municipio" IsEditable="True" Name="combomunientidad"/>
+                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="auto" Width="344" Margin="4,0,0,9"
+                         materialDesign:HintAssist.Hint="Direccion" Name="combodirentidad" IsEditable="True"/>
                     </Grid>
                 </Border>
-            </syncfusion:TabItemExt>
-            <syncfusion:TabItemExt Header="Persona" IsNewTab="False" MinWidth="150" MinHeight="20" Padding="0">
-                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-5">
-                    <Grid>
-                        <CheckBox IsChecked="True" Margin="599,24,16,0" VerticalAlignment="Top" Height="16">
-                            <CheckBox.LayoutTransform>
-                                <ScaleTransform ScaleX="1.6" ScaleY="1.6"/>
-                            </CheckBox.LayoutTransform>
-                        </CheckBox>
-                        <Label Content="Nombre" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,20,0,0" Width="400" Height="27"/>
-                        <Label Content="Email" Margin="20,60,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,60,0,0" Width="505" Height="27"/>
-                        <Label Content="Ciudad" Margin="20,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray"  FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,140,0,0" Width="218" Height="27"/>
-                        <Label Content="NIT" Margin="376,180,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,220,0,0" Width="180" Height="27"/>
-                        <Label Content="Celular" Margin="335,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="409,220,0,0" Width="180" Height="27"/>
-                        <Label Content="Direccion" Margin="20,100,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="114,100,0,0" Width="505" Height="27"/>
-                        <Label Content="Fecha de Nacimiento" Margin="20,180,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="187,180,0,0" Width="175" Height="27" RenderTransformOrigin="0.5,0.5">
-                            <TextBox.RenderTransform>
+                <ListBox x:Name="listdireccionentidad" HorizontalAlignment="Left" Height="auto" Margin="15,228,0,0"
+                         VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}"
+                         RenderTransformOrigin="0.5,0.5" SelectionChanged="Listdireccionentidad_SelectionChanged"
+                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White">
+                    <ListBox.RenderTransform>
+                        <TransformGroup>
+                            <RotateTransform Angle="90"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ListBox.RenderTransform>
+                    <ListBoxItem x:Name="itemdirentadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemdirentquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus" RenderTransformOrigin="0.5,0.5">
+                            <materialDesign:PackIcon.RenderTransform>
                                 <TransformGroup>
                                     <ScaleTransform/>
                                     <SkewTransform/>
-                                    <RotateTransform Angle="0.009"/>
+                                    <RotateTransform Angle="90"/>
                                     <TranslateTransform/>
                                 </TransformGroup>
-                            </TextBox.RenderTransform>
-                        </TextBox>
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="260,395,264,0" Height="37" Width="120" Background="#039be5">
-                            <Button.Content>
-                                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-                            </Button.Content>
-                        </Button>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="296,220,0,0" Height="27" Width="27" Background="#039be5">
-                            <Button.Content>
-                                <Image/>
-                            </Button.Content>
-                        </Button>
-                        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Margin="591,220,0,0" Height="27" Width="27" Background="#039be5">
-                            <Image/>
-                        </Button>
-                        <Label Content="Comentario/observacion" Margin="20,260,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <RichTextBox HorizontalAlignment="Left" Height="70" Margin="25,290,0,0" VerticalAlignment="Top" Width="592">
-                            <FlowDocument>
-                                <Paragraph>
-                                    <Run Text="RichTextBox"/>
-                                </Paragraph>
-                            </FlowDocument>
-                        </RichTextBox>
-                        <Label Content="Ci" Margin="351,140,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="395,140,0,0" Width="224" Height="27"/>
-                        <Label Content="Telefono" Margin="20,220,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="430,180,0,0" Width="189" Height="27"/>
-                        <Label Content="Estado" Margin="531,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="15" Foreground="Gray" FontWeight="Medium"/>
-                    </Grid>
-                </Border>
-            </syncfusion:TabItemExt>
-        </syncfusion:TabControlExt>
+                            </materialDesign:PackIcon.RenderTransform>
+                        </materialDesign:PackIcon>
+                    </ListBoxItem>
+                </ListBox>
+                <Button Name="buttondialogdir" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Añadido!!!" Visibility="Collapsed" Margin="0,215,0,0" Click="Buttondialogdir_Click"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="55,0,0,32" Width="166" Height="42" Background="MediumVioletRed" Name="buttondialogtel" Click="Buttondialogtel_Click" Visibility="Collapsed"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="257,0,0,32" Width="166" Height="42" Background="MediumVioletRed" x:Name="buttondialogcel" Click="Buttondialogcel_Click" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+
+        <Border x:Name="borderper" Grid.Row="2" Visibility="Visible" BorderThickness="0,1,0,0" Margin="-3,0">
+            <Grid>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Deshabilitado" Foreground="Gray" Margin="0,44,69,0" Width="101"
+                       HorizontalContentAlignment="Right" Name="labelpersona"/>
+                <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Top"
+                              HorizontalAlignment="Right" Margin="0,48,29,0" Name="toggleper"/>
+                <Label Content="{materialDesign:PackIcon Kind=User}" Margin="24,83,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,72,0,0" Width="358" Height="auto"
+                         materialDesign:HintAssist.Hint="Nombre" Name="textnombreper"/>
+                <Label Content="{materialDesign:PackIcon Kind=Email}" Margin="24,128,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,117,0,0" Width="358" Height="auto"
+                         materialDesign:HintAssist.Hint="Email" Name="textemailper"/>
+                <Label Content="{materialDesign:PackIcon Kind=City}" Margin="24,173,0,0" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,207,0,0" Width="358" Height="auto"
+                         materialDesign:HintAssist.Hint="Ciudad" Name="textciudadper"/>
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,297,0,0" Width="106" Height="auto"
+                          materialDesign:HintAssist.Hint="Telefono" IsEditable="True" Name="combotelper"/>
+                <ListBox x:Name="listtelefonoper" HorizontalAlignment="Left" Height="auto" Margin="166,315,0,0" VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listtelefonoper_SelectionChanged">
+                    <ListBoxItem x:Name="itemperadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemperquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                </ListBox>
+                <ListBox x:Name="listcelularper" HorizontalAlignment="Left" Height="auto" Margin="369,315,0,0" VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listcelularper_SelectionChanged">
+                    <ListBoxItem x:Name="itemcelperadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemcelperquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                </ListBox>
+                <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,297,0,0" Width="107" Height="auto"
+                          materialDesign:HintAssist.Hint="Celular" IsEditable="True" Name="combocelper"/>
+                <Label Content="{materialDesign:PackIcon Kind=AddressMarker}" Margin="24,218,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,162,0,0" Width="358" Height="auto"
+                         materialDesign:HintAssist.Hint="Direccion" Name="textdirper"/>
+                <Label Content="{materialDesign:PackIcon Kind=DateRange}" Margin="24,367,0,0" 
+                       HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <syncfusion:DateTimeEdit x:Name="datefecha" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,366,0,0"
+                                         Width="155" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" HorizontalContentAlignment="Center"
+                                         syncfusion:SkinStorage.VisualStyle="Metro"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,252,0,0" Width="155" Height="auto"
+                         materialDesign:HintAssist.Hint="C.I." Name="textciper"/>
+                <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="257,252,0,0" Width="156" Height="auto"
+                         materialDesign:HintAssist.Hint="NIT" Name="textnitper"/>
+                <Label Content="{materialDesign:PackIcon Kind=Phone}" Margin="24,311,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="{materialDesign:PackIcon Kind=Cellphone}" Margin="226,311,0,0"
+                       HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="{materialDesign:PackIcon Kind=IdentificationCard}" Margin="24,263,0,0"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="{materialDesign:PackIcon Kind=CameraAccount}" Margin="226,263,0,0"
+                    HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="55,0,0,104" Width="166" Height="42" Background="MediumVioletRed" Name="buttondialogtelper" Click="Buttondialogtelper_Click" Visibility="Collapsed"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="257,0,0,104" Width="166" Height="42" Background="MediumVioletRed" x:Name="buttondialogcelper" Click="Buttondialogcelper_Click" Visibility="Collapsed"/>
+            </Grid>
+        </Border>
+
+        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="120" Grid.Row="3" Margin="158,25,158,0"
+                Content="Guardar" Name="buttonguardad" Click="Buttonguardad_Click"/>
     </Grid>
 </Window>

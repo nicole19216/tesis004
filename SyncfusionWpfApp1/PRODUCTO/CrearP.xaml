@@ -5,131 +5,175 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SyncfusionWpfApp1.PRODUCTO"
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CrearP" Height="783" Width="916.833">
+        Title="CrearP" Height="722" Width="546.833">
+    <Window.Resources>
+        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+        <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}"/>
+    </Window.Resources>
     <Grid>
-        <Image Source="/RECURSOS/ICONOS/icons8_Packaging_100px.png" Width="130" Height="130" Margin="390,1,389,621"/>
-        <syncfusion:TabControlExt TabItemLayout="SingleLine" CloseButtonType="Hide" ShowTabListContextMenu="False" syncfusion:SkinStorage.VisualStyle="Metro"
-                                  BorderBrush="White" HorizontalAlignment="Stretch" Margin="0,160,0,0" TabPanelBackground="White" TabItemSelectedBorderBrush="#039be5">
-            <syncfusion:TabItemExt Header="Datos Basicos" MinWidth="150" MinHeight="20">
-                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-5">
-                    <Grid>
-                        <Label Content="Nombre/s" FontSize="14" Margin="10,88,0,0" VerticalAlignment="Top" Name="LblNombre" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <TextBox Height="27" Margin="145,88,259,0" Name="TxtNombre" Text="PRUEBA" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap" Padding="5,2,-1,-1" CharacterCasing="Upper"/>
-                        <Label Content="Descripcion" FontSize="14" Margin="10,148,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <TextBox Height="27" Margin="145,148,15,0" x:Name="TxtNombre_Copy" Text="PRUEBA" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap" Padding="5,2,-1,-1" CharacterCasing="Upper"/>
-                        <Label Content="Estado" FontSize="14" Margin="699,88,146,0" VerticalAlignment="Top" x:Name="LblNombre_Copy1" FontWeight="SemiBold"/>
-                        <CheckBox IsChecked="True" Margin="0,88,77,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="13">
-                            <CheckBox.LayoutTransform>
-                                <ScaleTransform ScaleX="1.8" ScaleY="1.8"/>
-                            </CheckBox.LayoutTransform>
-                        </CheckBox>
-                        <Label Content="Categoria" FontSize="14" Margin="10,208,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy2" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <ComboBox Margin="145,208,458,0" VerticalAlignment="Top" Height="27" FontSize="14"/>
-                        <Label Content="Marca" FontSize="14" Margin="481,208,373,0" VerticalAlignment="Top" x:Name="LblNombre_Copy3" FontWeight="SemiBold"/>
-                        <ComboBox Margin="588,208,15,0" Height="27" VerticalAlignment="Top" FontSize="14"/>
-                        <Label Content="Ubicacion" FontSize="14" Margin="10,268,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy4" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <ComboBox Margin="145,268,458,0" VerticalAlignment="Top" Height="27" FontSize="14"/>
-                        <Label Content="Codigo Barras" FontSize="14" Margin="10,28,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy6" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <Label Content="Codigo Rapido" FontSize="14" Margin="512,28,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy7" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <TextBox Height="27" Margin="145,28,430,0" x:Name="TxtNombre_Copy1" Text="PRUEBA" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap" Padding="5,2,-1,-1" CharacterCasing="Upper"/>
-                        <TextBox Height="27" Margin="670,28,15,0" x:Name="TxtNombre_Copy2" Text="PRUEBA" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap" Padding="5,2,-1,-1" CharacterCasing="Upper"/>
-                        <Label Content="Stock Minimo" FontSize="14" Margin="10,328,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy8" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <TextBox Height="27" Margin="145,328,458,0" x:Name="TxtNombre_Copy3" Text="PRUEBA" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap" Padding="5,2,-1,-1" CharacterCasing="Upper"/>
-                        <Label Content="Stock Maximo" FontSize="14" Margin="481,328,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy9" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <TextBox Height="27" Margin="588,328,15,0" x:Name="TxtNombre_Copy4" Text="PRUEBA" VerticalAlignment="Top" FontSize="14" TextWrapping="Wrap" Padding="5,2,-1,-1" CharacterCasing="Upper"/>
-                        <Label Content="F. Produccion" FontSize="14" Margin="10,388,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy10" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <syncfusion:DateTimeEdit IsButtonPopUpEnabled="False" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" Pattern="CustomPattern" CustomPattern="dd/MM/yyyy" Visibility="Visible"
-                            Margin="145,388,458,0" VerticalAlignment="Top" x:Name="dateedit_fechanac" DateTime="1993-09-05" HorizontalContentAlignment="Center"/>
-                        <Label Content="F. Expiracion" FontSize="14" Margin="481,388,0,0" VerticalAlignment="Top" x:Name="LblNombre_Copy11" FontWeight="SemiBold" HorizontalAlignment="Left"/>
-                        <syncfusion:DateTimeEdit IsButtonPopUpEnabled="False" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" Pattern="CustomPattern" CustomPattern="dd/MM/yyyy" Visibility="Visible"
-                            Margin="588,388,15,0" VerticalAlignment="Top" x:Name="dateedit_fechanac_Copy" DateTime="1993-09-05" HorizontalContentAlignment="Center"/>
-                        <Label Margin="481,268,0,0" Content="Impuesto" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiBold"/>
-                        <ComboBox Margin="588,268,15,0" Height="27" VerticalAlignment="Top" FontSize="14" Width="300"/>
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="391,486,392,0" Height="36" Width="120" Background="#039be5">
-                            <Button.Content>
-                                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-                            </Button.Content>
-                        </Button>
-                    </Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="71*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="488*"/>
+            <RowDefinition Height="89*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" Grid.Row="1">
+            <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" 
+                         Content="Datos Basicos" Name="TabDatos" Checked="TabDatos_Checked"/>
+            <RadioButton Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" Content="Imagenes"
+                         Name="TabImagenes" Checked="TabImagenes_Checked"/>
+        </StackPanel>
+        <Border Visibility="Visible" Name="borderdatos" Grid.Row="2">
+            <Grid>
+                <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="519" Height="100" Margin="10,63,0,0" CornerRadius="3"/>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Deshabilitado" Foreground="Gray"
+                       Margin="0,37,47,0" Width="101" HorizontalContentAlignment="Right" Name="labelpersona"/>
+                <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Top"
+                              HorizontalAlignment="Right" Margin="0,40,11,0" Name="toggleper"/>
+                <Label Content="{materialDesign:PackIcon Kind=Dropbox}" Margin="24,128,0,0" VerticalAlignment="Top" Name="LblNombre" HorizontalAlignment="Left"/>
+                <TextBox  Margin="55,117,0,0" Name="textnombre" VerticalAlignment="Top" TextWrapping="Wrap" 
+                          CharacterCasing="Upper"
+                          materialDesign:HintAssist.Hint="Nombre" HorizontalAlignment="Left" Width="437"/>
+                <materialDesign:ColorZone Mode="Standard" HorizontalAlignment="Left" VerticalAlignment="Top" Width="519" Height="153" Margin="10,177,0,0" CornerRadius="3"/>
+                <Label Content="{materialDesign:PackIcon Kind=FolderMultipleOutline}" Margin="24,202,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <ComboBox Margin="55,188,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Categoria" DisplayMemberPath="nombre" SelectedValuePath="idc" HorizontalAlignment="Left" Width="170" Name="combocategoriap"/>
+                <ListBox x:Name="listcategoria" HorizontalAlignment="Left" Height="auto" Margin="230,206,0,0" VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listcategoria_SelectionChanged">
+                    <ListBoxItem x:Name="itemcatadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemcatquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                </ListBox>
+                <Label Content="{materialDesign:PackIcon Kind=BookmarkPlusOutline}" Margin="291,202,0,0" VerticalAlignment="Top"
+                       HorizontalAlignment="Left"/>
+                <ComboBox Margin="322,188,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Marca" SelectedValuePath="ID"
+                          HorizontalAlignment="Left" Width="170" Name="combomarca" DisplayMemberPath="NOMBRE"/>
+                <ListBox x:Name="listmarca" HorizontalAlignment="Left" Height="auto" Margin="497,206,0,0" 
+                         VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" 
+                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listmarca_SelectionChanged">
+                    <ListBoxItem x:Name="itemmaradd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="PlusOutline"/>
+                    </ListBoxItem>
+                </ListBox>
+                <Label Content="{materialDesign:PackIcon Kind=Location}" Margin="24,250,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <ComboBox Margin="55,236,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Ubicacion"
+                          HorizontalAlignment="Left" Width="170" Name="comboubicacion" DisplayMemberPath="NOMBRE" SelectedValuePath="ID"/>
+                <ListBox x:Name="listdireccion" HorizontalAlignment="Left" Height="auto" Margin="230,254,0,0" 
+                         VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" 
+                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listdireccion_SelectionChanged">
+                    <ListBoxItem x:Name="itemdiradd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="PlusOutline"/>
+                    </ListBoxItem>
+                </ListBox>
+                <Label Content="{materialDesign:PackIcon Kind=Barcode}" Margin="24,83,0,0" VerticalAlignment="Top"
+                       HorizontalAlignment="Left"/>
+                <Label Content="{materialDesign:PackIcon Kind=BarcodeScan}" Margin="291,83,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Margin="55,72,0,0" x:Name="textbarras" VerticalAlignment="Top" HorizontalAlignment="Left"
+                         TextWrapping="Wrap" CharacterCasing="Upper" materialDesign:HintAssist.Hint="Clave / Codigo de Barras" 
+                         Width="170"/>
+                <TextBox Margin="322,72,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" 
+                         CharacterCasing="Upper" Name="textrapido"
+                         materialDesign:HintAssist.Hint="Codigo Rapido" Width="170"/>
+                <Label Content="{materialDesign:PackIcon Kind=ClipboardAlert}" Margin="24,295,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Margin="55,284,0,0" materialDesign:HintAssist.Hint="Stock Minimo" VerticalAlignment="Top" 
+                         TextWrapping="Wrap" Name="textstockminimo"
+                         CharacterCasing="Upper" HorizontalAlignment="Left" Width="170"/>
+                <Label Content="{materialDesign:PackIcon Kind=ClipboardPulse}" Margin="291,295,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <TextBox Margin="322,284,0,0" VerticalAlignment="Top" TextWrapping="Wrap"
+                         materialDesign:HintAssist.Hint="Stock Maximo" Name="textstockmaximo"
+                         CharacterCasing="Upper" HorizontalAlignment="Left" Width="170"/>
+                <Label Margin="291,250,0,0" Content="{materialDesign:PackIcon Kind=Database}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <ComboBox Margin="322,236,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Impuesto" DisplayMemberPath="NOMBRE" SelectedValuePath="ID" HorizontalAlignment="Left" Width="170" Name="comboimpuesto"/>
+                <ListBox x:Name="listimpuesto" HorizontalAlignment="Left" Height="auto" Margin="497,254,0,0" 
+                         VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" 
+                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listimpuesto_SelectionChanged">
+                    <ListBoxItem x:Name="itemimpadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="PlusOutline"/>
+                    </ListBoxItem>
+                </ListBox>
+                <materialDesign:ColorZone Mode="Standard" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="120" Width="519" Margin="9,0,0,24" CornerRadius="3"/>
+                <Label Content="{materialDesign:PackIcon Kind=Shopify}" HorizontalAlignment="Left" VerticalAlignment="Top"
+                       Margin="24,382,0,0" Name="labelunidadcompra"/>
+                <ComboBox Margin="55,368,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Compra"
+                          HorizontalAlignment="Left" Width="174" x:Name="combounidadcompra" IsEditable="True"/>
+                <Label Content="{materialDesign:PackIcon Kind=BasketFill}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,429,0,0" Name="labelcantidadpiezas"/>
+                <Label Content="{materialDesign:PackIcon Kind=CashMultiple}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="291,382,0,0" Name="labelcostocompra"/>
+                <Label Content="{materialDesign:PackIcon Kind=MoneyOff}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="291,429,0,0" Name="labelcostopieza"/>
+                <TextBox Margin="322,371,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo de Compra"
+                          HorizontalAlignment="Left" Width="170" x:Name="textcostocompra"/>
+                <TextBox Margin="322,418,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo por pieza"
+                          HorizontalAlignment="Left" Width="170" x:Name="textcostopieza" IsEnabled="True"/>
+                <TextBox Margin="55,418,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad de Piezas"
+                          HorizontalAlignment="Left" Width="174" x:Name="textcantidadpieza"/>
+                <ListBox x:Name="listcosto" HorizontalAlignment="Left" Height="auto" Margin="453,344,0,0" VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" RenderTransformOrigin="0.5,0.5" SelectionChanged="Listcosto_SelectionChanged">
+                    <ListBoxItem x:Name="itemcostadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemcostquit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemcostshow" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="ShowOutline" Height="20"/>
+                    </ListBoxItem>
+                </ListBox>
+                <ListView x:Name="listcost" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="616" Margin="10,0,0,0" Height="87" Visibility="Collapsed" ItemsSource="{Binding Tables[0]}" materialDesign:DataGridAssist.ColumnHeaderPadding="20,2,20,2" materialDesign:DataGridAssist.CellPadding="20,2,20,2">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn DisplayMemberBinding="{Binding unidad_compra}" Header="Unidad Compra" />
+                            <GridViewColumn DisplayMemberBinding="{Binding precio}" Header="Costo Compra" />
+                            <GridViewColumn DisplayMemberBinding="{Binding cantidad_piezas}" Header="Cantidad Piezas" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Grid Name="gridshowcost" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="617" Height="114" Margin="9,0,0,0" Background="Black" Opacity=".8" Visibility="Collapsed"/>
+                <Button HorizontalAlignment="Left" Margin="206,0,0,41" Width="243" VerticalAlignment="Bottom" Opacity=".9" Name="buttonshowcost" Visibility="Collapsed" Click="Buttonshowcost_Click">
+                    <Button.Content>
+                        <TextBlock Text="Llene los Campos Correctamente" TextWrapping="Wrap"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+        </Border>
+        <Border Visibility="Collapsed" Grid.Row="2" Name="borderimagen">
+            <Grid>
+                <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Center" Height="200" Margin="170,89,169,0"
+                        VerticalAlignment="Top" Width="200" CornerRadius="3">
+                    <Image Name="imagen"/>
                 </Border>
-            </syncfusion:TabItemExt>
-            <syncfusion:TabItemExt Header="Precios y Unidades" MinWidth="150" MinHeight="20">
-                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-5">
-                    <Grid>
-                        <ComboBox Margin="147,28,456,0" Height="27" VerticalAlignment="Top" FontSize="14"/>
-                        <Label Content="Unidad Compra" FontSize="14" Margin="10,28,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiBold"/>
-                        <ComboBox Margin="593,28,15,0" Height="27" VerticalAlignment="Top" FontSize="14"/>
-                        <Label Content="Costo Compra" FontSize="14" Margin="462,28,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiBold"/>
-                        <Grid Height="29" Margin="15,148,15,272" Background="DarkGray">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Label Content="Unidad Venta" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="0" Height="27"/>
-                            <Label Content="Cantidad piezas" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="1"/>
-                            <Label Content="Utilidad Pieza" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="2"/>
-                            <Label Content="Precio Pieza" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="3"/>
-                            <Label Content="Utilidad Venta" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="4"/>
-                            <Label Content="Precio Venta" HorizontalAlignment="Center" VerticalAlignment="Top" Height="27" Grid.Column="5"/>
-                        </Grid>
-                        <Label Content="Costo Unidad" FontSize="14" Margin="462,88,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiBold"/>
-                        <ComboBox Margin="593,88,15,0" Height="27" VerticalAlignment="Top" FontSize="14"/>
-                        <Label Content="Cantidad Unidades" FontSize="14" Margin="10,88,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="SemiBold"/>
-                        <ComboBox Margin="152,88,456,0" Height="27" VerticalAlignment="Top" FontSize="14"/>
-                        <syncfusion:SfDataGrid x:Name="DataGridNumero" ItemsSource="{Binding}" AutoGenerateColumns="False" ColumnSizer="Star" HorizontalAlignment="Stretch" Height="148"
-                          Visibility="Visible" Margin="15,273,15,0" VerticalAlignment="Top" HeaderRowHeight="0">
-                            <syncfusion:SfDataGrid.Columns>
-                                <syncfusion:GridComboBoxColumn HeaderText="UNIDAD VENTA"/>
-                                <syncfusion:GridNumericColumn NumberDecimalDigits="0" HeaderText = "NUMERO" MappingName="numero"/>
-                                <syncfusion:GridTextColumn HeaderText = "DESCRIPCION" MappingName = "descripcion"/>
-                                <syncfusion:GridCheckBoxColumn HeaderText = "ESTADO" MappingName = "estado"/>
-                            </syncfusion:SfDataGrid.Columns>
-                        </syncfusion:SfDataGrid>
-                        <Grid Height="29" Margin="15,182,15,238">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="0"/>
-                            <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="1"/>
-                            <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="2"/>
-                            <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="3"/>
-                            <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="4"/>
-                            <TextBox Height="27" Margin="6,0,2,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14" Padding="5,2,-1,-1" CharacterCasing="Upper" Grid.Column="5"/>
-                        </Grid>
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="391,486,392,0" Height="36" Width="120" Background="#039be5">
-                            <Button.Content>
-                                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-                            </Button.Content>
-                        </Button>
-                    </Grid>
+                <ListBox x:Name="listimagen" HorizontalAlignment="Center" Height="auto" Margin="248,283,247,0" VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" SelectionChanged="Listimagen_SelectionChanged">
+                    <ListBoxItem x:Name="itemimageadd" Padding="0" ToolTip="Añadir">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemimagequit" Padding="0" ToolTip="Quitar">
+                        <materialDesign:PackIcon Kind="Minus"/>
+                    </ListBoxItem>
+                </ListBox>
+                <Border BorderBrush="Gray" BorderThickness="1" HorizontalAlignment="Left" Height="110" Margin="10,337,0,0"
+                    VerticalAlignment="Top" Width="519" CornerRadius="3" Name="borderimagenes">
+                    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Margin="0,0,0,-17">
+                        <WrapPanel Name="wrapimagen" Orientation="Vertical">
+                            <WrapPanel.Resources>
+                                <Style TargetType="{x:Type Image}">
+                                    <Setter Property="Margin" Value="5,4,0,0" />
+                                </Style>
+                            </WrapPanel.Resources>
+                        </WrapPanel>
+                    </ScrollViewer>
                 </Border>
-            </syncfusion:TabItemExt>
-            <syncfusion:TabItemExt Header="Imagenes" MinWidth="150" MinHeight="20">
-                <Border BorderBrush="#039be5" BorderThickness="0,1,0,0" Margin="-3,-2,-3,-5">
-                    <Grid>
-                        <Border BorderBrush="Black" BorderThickness="1" Margin="101,50,574,263">
-                            <Image Margin="0,0,0,-1" />
-                        </Border>
-                        <Button Margin="101,314,711,202" Content="Agregar"/>
-                        <Button Margin="236,314,574,202" Content="Eliminar"/>
-                        <Button HorizontalAlignment="Center" VerticalAlignment="Top" Margin="391,486,392,0" Height="36" Width="120" Background="#039be5">
-                            <Button.Content>
-                                <TextBlock Text="Guardar" Foreground="White" FontSize="15" FontWeight="Medium"/>
-                            </Button.Content>
-                        </Button>
-                    </Grid>
-                </Border>
-            </syncfusion:TabItemExt>
-        </syncfusion:TabControlExt>
+                <Button Name="buttonquitarimagen" Height="29" Width="72" Content="Quitar" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="10,308,457,0" Click="Buttonquitarimagen_Click"/>
+
+            </Grid>
+        </Border>
+
+        <Button Height="36" Width="118" Content="Guardar" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Center" 
+                Margin="206,25,215,0" Name="buttonguardar" Click="Buttonguardar_Click"/>
+
+        <Grid Background="Black" Grid.Row="0" Opacity=".8" Name="grid1" Visibility="Collapsed"/>
+        <Grid Background="Black" Grid.Row="1" Opacity=".8" Name="grid2" Visibility="Collapsed"/>
+        <Grid Background="Black" Grid.Row="2" Opacity=".8" Name="grid3" Visibility="Collapsed"/>
+        <Grid Background="Black" Grid.Row="3" Opacity=".8" Name="grid4" Visibility="Collapsed"/>
+
     </Grid>
 </Window>

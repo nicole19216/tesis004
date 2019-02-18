@@ -33,21 +33,35 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
     <Reference Include="ReachFramework" />
-    <Reference Include="Syncfusion.Data.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.RichTextBoxAdv.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.SfChart.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.SfDiagram.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.SfGrid.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.SfSkinManager.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Shared.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Themes.Office2016DarkGray.Wpf, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
-    <Reference Include="Syncfusion.Tools.WPF, Version=16.3460.0.29, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="ShowMeTheXAML">
+      <HintPath>D:\temaspro\MaterialDesignInXamlToolkit-master\MaterialDesignInXamlToolkit-master\MainDemo.Wpf\bin\Debug\ShowMeTheXAML.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.RichTextBoxAdv.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfChart.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfDiagram.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfGrid.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfInput.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfNavigationDrawer.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfShared.Wpf, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.SfSkinManager.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Shared.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Themes.Office2016DarkGray.Wpf, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
+    <Reference Include="Syncfusion.Tools.WPF, Version=16.4460.0.42, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Printing" />
-    <Reference Include="System.Windows.Interactivity">
-      <Private>False</Private>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Public\Documents\Syncfusion\WPF\16.3.0.29\SfGrid.WPF\Samples\AutoCellMergeDemo\CS\bin\Debug\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,28 +89,81 @@
     <Compile Include="CLIENTE\CrearC.xaml.cs">
       <DependentUpon>CrearC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CLIENTE\MainC.xaml.cs">
+      <DependentUpon>MainC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="COMPRA\AgregarC.xaml.cs">
+      <DependentUpon>AgregarC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="COMPRA\BuscarProductoC.xaml.cs">
+      <DependentUpon>BuscarProductoC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="COMPRA\CrearC.xaml.cs">
       <DependentUpon>CrearC.xaml</DependentUpon>
     </Compile>
     <Compile Include="COTIZACION\CrearC.xaml.cs">
       <DependentUpon>CrearC.xaml</DependentUpon>
     </Compile>
+    <Compile Include="HELPERS\MergedCellBahavior.cs" />
+    <Compile Include="HELPERS\NotEmptyValidationRule.cs" />
+    <Compile Include="PRODUCTO\Ajustar_InventarioP.xaml.cs">
+      <DependentUpon>Ajustar_InventarioP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO\CrearCategoriaP.xaml.cs">
+      <DependentUpon>CrearCategoriaP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO\CrearImpuestoP.xaml.cs">
+      <DependentUpon>CrearImpuestoP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO\CrearMarcaP.xaml.cs">
+      <DependentUpon>CrearMarcaP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PRODUCTO\CrearP.xaml.cs">
       <DependentUpon>CrearP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO\CrearUbicacionP.xaml.cs">
+      <DependentUpon>CrearUbicacionP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO\MainP.xaml.cs">
+      <DependentUpon>MainP.xaml</DependentUpon>
     </Compile>
     <Compile Include="PROVEEDOR\CrearP.xaml.cs">
       <DependentUpon>CrearP.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PROVEEDOR\MainP.xaml.cs">
+      <DependentUpon>MainP.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ROL\CrearR.xaml.cs">
       <DependentUpon>CrearR.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ROL\MainR.xaml.cs">
+      <DependentUpon>MainR.xaml</DependentUpon>
     </Compile>
     <Compile Include="USUARIO\CrearU.xaml.cs">
       <DependentUpon>CrearU.xaml</DependentUpon>
     </Compile>
+    <Compile Include="USUARIO\EditarU.xaml.cs">
+      <DependentUpon>EditarU.xaml</DependentUpon>
+    </Compile>
     <Compile Include="USUARIO\MainU.xaml.cs">
       <DependentUpon>MainU.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PRINCIPAL.xaml.cs">
+      <DependentUpon>PRINCIPAL.xaml</DependentUpon>
+    </Compile>
     <Page Include="CLIENTE\CrearC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CLIENTE\MainC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="COMPRA\AgregarC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="COMPRA\BuscarProductoC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -120,7 +187,31 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PRODUCTO\Ajustar_InventarioP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRODUCTO\CrearCategoriaP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRODUCTO\CrearImpuestoP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRODUCTO\CrearMarcaP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PRODUCTO\CrearP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRODUCTO\CrearUbicacionP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRODUCTO\MainP.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -128,7 +219,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PROVEEDOR\MainP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ROL\CrearR.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ROL\MainR.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -136,9 +235,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="USUARIO\EditarU.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="USUARIO\MainU.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRINCIPAL.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +266,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -199,6 +307,15 @@
       <Project>{c72b96d6-8de3-41ba-a179-62077eedee62}</Project>
       <Name>NEGOCIO</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RECURSOS\ICONOS\icons8_Phone_96px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RECURSOS\ICONOS\icons8_Cell_Phone_96px_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RECURSOS\ICONOS\icons8_Gmail_96px_4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
