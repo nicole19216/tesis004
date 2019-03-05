@@ -21,21 +21,44 @@ namespace SyncfusionWpfApp1.COMPRA
     /// </summary>
     public partial class AgregarC : Window
     {
-        public int idp = 0;
+        public int idp;
+        private DataTable datacombo;
 
-        public AgregarC()
+        public AgregarC(int p)
         {
             InitializeComponent();
-            DataTable data = NProducto.BuscarProducto(idp);
-            DataSet ds = new DataSet("dsproducto");
-            ds.Tables.Add(data);
-            this.DataContext = ds.Tables[0];
-
-            combounidadcompra.ItemsSource=
-
+            CargarInfoProducto(p);
+            CargarInfoCosto(p);
             //combounidadcompra.Items.CurrentChanged
         }
 
+        private void CargarInfoProducto(int id)
+        {
+            DataTable data = NProducto.BuscarProducto(id);
+            DataSet ds = new DataSet("dsproducto");
+            ds.Tables.Add(data);
+            gridproducto.DataContext = ds.Tables[0];
+        }
+
+        private void CargarInfoCosto(int id)
+        {
+            combounidadcompra.ItemsSource = NCompra.BuscarCosto(id).DefaultView;
+            combounidadcompra.SelectionChanged += Combounidadcompra_SelectionChanged;
+            datacombo = NCompra.BuscarCosto(id);
+        }
+
+        private void Combounidadcompra_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (DataRow item in datacombo.Rows)
+            {
+                if (Convert.ToInt32(item[0]) == Convert.ToInt32(combounidadcompra.SelectedValue))
+                {
+                    textcostocompra.Text =(decimal.Round((decimal)item[2],2)).ToString();
+                    textcantidadpieza.Text = item[3].ToString();
+                    textcostopieza.Text = (decimal.Round((decimal)item[2] / (int)item[3],2)).ToString();
+                }
+            }
+        }
         //private void Textbarras_KeyDown(object sender, KeyEventArgs e)
         //{
         //    if (e.Key==Key.Return)

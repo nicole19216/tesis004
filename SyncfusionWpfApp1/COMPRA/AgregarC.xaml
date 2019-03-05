@@ -16,42 +16,47 @@
             <Grid>
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="104" Margin="10,257,0,0" CornerRadius="3"/>
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="145" Margin="10,54,0,0" CornerRadius="3"/>
-                <Label Content="{materialDesign:PackIcon Kind=Dropbox}" Margin="18,119,0,0" VerticalAlignment="Top" x:Name="LblNombre" HorizontalAlignment="Left"/>
-                <TextBox Margin="51,108,0,0" x:Name="textnombre" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+
+                <Grid Name="gridproducto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="533" Height="145" Margin="10,54,0,0" DataContext="{Binding}">
+                <Label Content="{materialDesign:PackIcon Kind=Barcode}" Margin="10,21,0,0" VerticalAlignment="Top"
+                       HorizontalAlignment="Left"/>
+                <Label Content="{materialDesign:PackIcon Kind=BarcodeScan}" Margin="268,21,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Label Content="{materialDesign:PackIcon Kind=Dropbox}" Margin="10,66,0,0" VerticalAlignment="Top" x:Name="LblNombre" HorizontalAlignment="Left"/>
+                <Label Content="{materialDesign:PackIcon Kind=ClipboardPulse}" Margin="10,111,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Label Margin="186,111,0,0" Content="{materialDesign:PackIcon Kind=ClipboardCheck}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <Label Content="{materialDesign:PackIcon Kind=ClipboardAlert}" Margin="362,111,0,0" VerticalAlignment="Top"
+                       HorizontalAlignment="Left"/>
+                <TextBox Margin="41,55,0,0" x:Name="textnombre" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                          materialDesign:HintAssist.Hint="Nombre" HorizontalAlignment="Left" Width="476" Focusable="False" Background="LightGray"
                          Text="{Binding NOMBRE}"/>
-                <Label Content="{materialDesign:PackIcon Kind=ClipboardAlert}" Margin="370,164,0,0" VerticalAlignment="Top"
-                       HorizontalAlignment="Left"/>
-                <Label Content="{materialDesign:PackIcon Kind=Barcode}" Margin="18,74,0,0" VerticalAlignment="Top"
-                       HorizontalAlignment="Left"/>
-                <Label Content="{materialDesign:PackIcon Kind=BarcodeScan}" Margin="278,74,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <TextBox Margin="49,63,0,0" x:Name="textbarras" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                <TextBox Margin="41,10,0,0" x:Name="textbarras" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
                          CharacterCasing="Upper" materialDesign:HintAssist.Hint="Clave / Codigo de Barras" Width="218"
                          Focusable="False" Background="LightGray" Text="{Binding CODIGO}"/>
-                <TextBox Margin="309,63,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                <TextBox Margin="299,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                          x:Name="textrapido" materialDesign:HintAssist.Hint="Codigo Rapido" Width="218" Focusable="False" Background="LightGray"
                          Text="{Binding CODIGORAPIDO}"/>
-                <Label Content="{materialDesign:PackIcon Kind=ClipboardPulse}" Margin="18,164,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Label Margin="196,164,0,0" Content="{materialDesign:PackIcon Kind=ClipboardCheck}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                <TextBox  Margin="41,100,0,0" x:Name="textnombre_Copy" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                          materialDesign:HintAssist.Hint="Existencia en Inventario" HorizontalAlignment="Left" Width="126" Focusable="False"
+                          Background="LightGray" Text="{Binding STOCK}"/>
+                <TextBox  Margin="217,100,0,0" x:Name="textnombre_Copy1" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                          materialDesign:HintAssist.Hint="Maximo Permitido" HorizontalAlignment="Left" Width="126" Focusable="False" Background="LightGray"
+                          Text="{Binding MAXIMO}"/>
+                <TextBox  Margin="393,100,0,0" x:Name="textnombre_Copy2" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                          materialDesign:HintAssist.Hint="Minimo Permitido" HorizontalAlignment="Left" Width="126" Focusable="False" Background="LightGray"
+                          Text="{Binding MINIMO}"/>
+                </Grid>
+
                 <Label Content="{materialDesign:PackIcon Kind=Shopify}" HorizontalAlignment="Left" VerticalAlignment="Top"
                        Margin="18,281,0,0" x:Name="labelunidadcompra"/>
                 <ComboBox Margin="51,267,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Compra" HorizontalAlignment="Left"
-                          Width="218" x:Name="combounidadcompra" DisplayMemberPath="UNIDAD" SelectedValuePath="IDP"/>
+                          Width="218" x:Name="combounidadcompra" DisplayMemberPath="UNIDAD" SelectedValuePath="PRODUCTO"/>
                 <Label Content="{materialDesign:PackIcon Kind=BasketFill}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,326,0,0" x:Name="labelcantidadpiezas"/>
                 <Label Content="{materialDesign:PackIcon Kind=CashMultiple}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,281,0,0" x:Name="labelcostocompra"/>
                 <Label Content="{materialDesign:PackIcon Kind=MoneyOff}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,326,0,0" x:Name="labelcostopieza"/>
                 <TextBox Margin="309,270,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo de Compra" HorizontalAlignment="Left" Width="218" x:Name="textcostocompra" Focusable="False" Background="LightGray"/>
                 <TextBox Margin="309,315,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo por pieza" HorizontalAlignment="Left" Width="218" x:Name="textcostopieza" Focusable="False" Background="LightGray"/>
                 <TextBox Margin="51,315,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad de Piezas" HorizontalAlignment="Left" Width="218" x:Name="textcantidadpieza" Focusable="False" Background="LightGray"/>
-                <TextBox  Margin="51,153,0,0" x:Name="textnombre_Copy" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
-                          materialDesign:HintAssist.Hint="Existencia en Inventario" HorizontalAlignment="Left" Width="126" Focusable="False"
-                          Background="LightGray" Text="{Binding STOCK}"/>
-                <TextBox  Margin="227,153,0,0" x:Name="textnombre_Copy1" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
-                          materialDesign:HintAssist.Hint="Maximo Permitido" HorizontalAlignment="Left" Width="126" Focusable="False" Background="LightGray"
-                          Text="{Binding MAXIMO}"/>
-                <TextBox  Margin="401,153,0,0" x:Name="textnombre_Copy2" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
-                          materialDesign:HintAssist.Hint="Minimo Permitido" HorizontalAlignment="Left" Width="126" Focusable="False" Background="LightGray"
-                          Text="{Binding MINIMO}"/>
+                
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="39" Margin="9,10,0,0" CornerRadius="3">
                     <TextBlock Text="Informacion Basica" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Opacity=".8"/>
                 </materialDesign:ColorZone>

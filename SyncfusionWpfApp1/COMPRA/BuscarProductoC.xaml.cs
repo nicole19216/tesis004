@@ -42,10 +42,9 @@ namespace SyncfusionWpfApp1.COMPRA
 
                 DataRowView dr = sfdtgrid.SelectedItem as DataRowView;
                 //MessageBox.Show(dr["MARCA"].ToString());
-                AgregarC agregar = new AgregarC();
-                agregar.idp = (int)dr["ID"];
+                AgregarC agregar = new AgregarC((int)dr["ID"]);
+                //agregar.idp = (int)dr["ID"];
                 agregar.ShowDialog();
-
             }
             catch (Exception ex)
             {

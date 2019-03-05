@@ -32,5 +32,12 @@ namespace NEGOCIO
 
             return compra.Insertar(compra, dDetalleCompras);
         }
+
+        public static DataTable BuscarCosto(int producto)
+        {
+            DCompra dCompra = new DCompra();
+            dCompra.Idpbuscar = producto;
+            return dCompra.BuscarCosto(dCompra);
+        }
     }
 }
