@@ -252,6 +252,7 @@ namespace SyncfusionWpfApp1.PROVEEDOR
         public CrearP()
         {
             InitializeComponent();
+            crear_tablas();
         }
 
         private void Tabentidad_Checked(object sender, RoutedEventArgs e)

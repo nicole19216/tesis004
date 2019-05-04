@@ -47,11 +47,11 @@ namespace DATOS
 
                 SqlCmd.Connection = SqlCon;
                 SqlCmd.Transaction = SqlTra;
-                SqlCmd.CommandText = "pInsertarCliente";
+                SqlCmd.CommandText = "pInsertarProveedor";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
                 SqlParameter pid = new SqlParameter();
-                pid.ParameterName = "@idc";
+                pid.ParameterName = "@idp";
                 pid.SqlDbType = SqlDbType.Int;
                 pid.Direction = ParameterDirection.Output;
                 SqlCmd.Parameters.Add(pid);

@@ -21,10 +21,12 @@ namespace SyncfusionWpfApp1.COMPRA
     /// </summary>
     public partial class BuscarProductoC : Window
     {
+        DataTable data;
         public BuscarProductoC()
         {
             InitializeComponent();
             sfdtgrid.DataContext = NProducto.Mostrar();
+            data = sfdtgrid.DataContext as DataTable;
         }
 
         private void Textbuscar_KeyDown(object sender, KeyEventArgs e)
@@ -33,23 +35,41 @@ namespace SyncfusionWpfApp1.COMPRA
             sfdtgrid.SearchHelper.Search(textbuscar.Text);
         }
 
+        private int id;
+        private string codigo;
+        private string producto;
+        private Interface1 inter;
+        
+        public int Id { get => id; set => id = value; }
+        public string Codigo { get => codigo; set => codigo = value; }
+        public string Producto { get => producto; set => producto = value; }
+        public Interface1 Inter { get => inter; set => inter = value; }
+
+        //public event RoutedEventHandler AgregarEventHandler;
+
         private void Sfdtgrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            try
-            {
-                if (sfdtgrid.SelectedItem == null)
-                    return;
 
-                DataRowView dr = sfdtgrid.SelectedItem as DataRowView;
-                //MessageBox.Show(dr["MARCA"].ToString());
-                AgregarC agregar = new AgregarC((int)dr["ID"]);
-                //agregar.idp = (int)dr["ID"];
-                agregar.ShowDialog();
-            }
-            catch (Exception ex)
+            if (sfdtgrid.SelectedItem == null)
+                return;
+
+            DataRowView dr = sfdtgrid.SelectedItem as DataRowView;
+            Id = (int)dr["ID"];
+            Codigo = (string)dr["CODIGO_BARRAS"];
+            Producto = (string)dr["NOMBRE"];
+
+            Inter.pasaritem(Id, Codigo, Producto);
+
+            for (int i = data.Rows.Count - 1; i >= 0; i--)
             {
-                MessageBox.Show(ex.Message);
+                if (dr["ID"].Equals(data.Rows[i]["ID"]))
+                {
+                    data.Rows.RemoveAt(i);
+                    break;
+                }
             }
+
+            sfdtgrid.DataContext = data;
         }
     }
 }

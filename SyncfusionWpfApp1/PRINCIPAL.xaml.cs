@@ -36,7 +36,7 @@ namespace SyncfusionWpfApp1
     /// </summary>
     public partial class PRINCIPAL : RibbonWindow
     {
-        private const string UriString = "PRODUCTO/MainP.xaml";
+        private const string UriString = "COMPRA/CrearC.xaml";
 
         public PRINCIPAL()
         {

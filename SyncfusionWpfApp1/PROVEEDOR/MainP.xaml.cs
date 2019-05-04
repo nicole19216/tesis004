@@ -23,8 +23,8 @@ namespace SyncfusionWpfApp1.PROVEEDOR
         public MainP()
         {
             InitializeComponent();
-            sfgrid.DataContext = NEGOCIO.NCliente.Mostrar();
-            sfgrid2.DataContext = NEGOCIO.NCliente.Mostrar();
+            sfgrid.DataContext = NEGOCIO.NProveedor.Mostrar();
+            sfgrid2.DataContext = NEGOCIO.NRepresentante.Mostrar();
         }
     }
 }

@@ -44,13 +44,13 @@ namespace DATOS
 
             try
             {
-
                 SqlCon.ConnectionString = Conexion.CadCon;
                 SqlCon.Open();
                 //Establecer el Comando
                 SqlTransaction SqlTra = SqlCon.BeginTransaction();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.Connection = SqlCon;
+                SqlCmd.Transaction = SqlTra;
                 SqlCmd.CommandText = "pInsertarCompra";
                 SqlCmd.CommandType = CommandType.StoredProcedure;
 

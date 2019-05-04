@@ -22,11 +22,11 @@ namespace NEGOCIO
             foreach (DataRow fila in dtdetallecompra.Rows)
             {
                 DDetalleCompra detalleCompra = new DDetalleCompra();
-                detalleCompra.Id_c = 1;
-                detalleCompra.Unidad_compra = Convert.ToString(fila["unidad_compra"]);
-                detalleCompra.Cantidad = 0;
-                detalleCompra.Cantidad_piezas = Convert.ToInt32(fila["cantidad_piezas"]);
-                detalleCompra.Precio = Convert.ToDecimal(fila["precio"]);
+                detalleCompra.Id_p = Convert.ToInt32(fila["id"]);
+                detalleCompra.Unidad_compra = Convert.ToString(fila["unidad"]);
+                detalleCompra.Cantidad = Convert.ToInt32(fila["cantidad"]);
+                detalleCompra.Cantidad_piezas = Convert.ToInt32(fila["piezas"]);
+                detalleCompra.Precio = Convert.ToDecimal(fila["costo"]);
                 dDetalleCompras.Add(detalleCompra);
             }
 

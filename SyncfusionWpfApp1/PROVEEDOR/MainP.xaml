@@ -45,12 +45,14 @@
             </DockPanel>
         </materialDesign:ColorZone>
         <TextBlock Text="Proveedor" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Row="1" Style="{StaticResource MaterialDesignSubheadingTextBlock}" Margin="20,8,0,0" Height="20" Width="68"/>
-        <materialDesign:Card Grid.Row="1" Margin="10,35,10,0" Height="12">
+        <materialDesign:Card Grid.Row="1" Margin="10,35,10,10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <syncfusion:SfDataGrid Name="sfgrid" AllowDraggingColumns="False" AllowEditing="False"
-                                       AllowFiltering="False" NavigationMode="Cell" SelectionUnit="Cell"                                          ShowRowHeader="False" AllowGrouping="True" ColumnSizer="Auto"                          
+                                       AllowFiltering="False" NavigationMode="Cell" SelectionUnit="Cell" 
+                                       ShowRowHeader="False" AllowGrouping="True" ColumnSizer="Auto"                          
                                        ShowGroupDropArea="False" AutoExpandGroups="True"
                                        SelectionMode="Single" LiveDataUpdateMode="AllowDataShaping"
-                                       ItemsSource="{Binding}" AutoGenerateColumns="True" syncfusion:SkinStorage.VisualStyle="Office2016White" Grid.Row="2" Margin="5">
+                                       ItemsSource="{Binding}" AutoGenerateColumns="True" 
+                                       syncfusion:SkinStorage.VisualStyle="Office2016White" Grid.Row="2" Margin="5">
                 <!--<syncfusion:SfDataGrid.Columns>
                 <syncfusion:GridTemplateColumn HeaderText="IMAGEN" MappingName="IMAGEN" AllowFocus="False">
                     <syncfusion:GridTemplateColumn.CellTemplate>
@@ -82,12 +84,14 @@
         </materialDesign:Card>
 
         <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left" Text="Representante" Grid.Row="2" Style="{StaticResource MaterialDesignTitleTextBlock}" Margin="20,3,0,0" Height="27" Width="130"/>
-        <materialDesign:Card Grid.Row="2" Margin="10,35,10,0" Height="12">
+        <materialDesign:Card Grid.Row="2" Margin="10,35,10,10" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <syncfusion:SfDataGrid Name="sfgrid2" AllowDraggingColumns="False" AllowEditing="False"
-                                       AllowFiltering="False" NavigationMode="Cell" SelectionUnit="Cell"                                          ShowRowHeader="False" AllowGrouping="True" ColumnSizer="Auto"                                
+                                       AllowFiltering="False" NavigationMode="Cell" SelectionUnit="Cell"                                          
+                                       ShowRowHeader="False" AllowGrouping="True" ColumnSizer="Auto"                                
                                        ShowGroupDropArea="False" AutoExpandGroups="True"
                                        SelectionMode="Single" LiveDataUpdateMode="AllowDataShaping"
-                                       ItemsSource="{Binding}" AutoGenerateColumns="True" syncfusion:SkinStorage.VisualStyle="Office2016White" Grid.Row="2" Margin="5">
+                                       ItemsSource="{Binding}" AutoGenerateColumns="True"
+                                       syncfusion:SkinStorage.VisualStyle="Office2016White" Grid.Row="2" Margin="5,5,5,5">
                 <!--<syncfusion:SfDataGrid.Columns>
                 <syncfusion:GridTemplateColumn HeaderText="IMAGEN" MappingName="IMAGEN" AllowFocus="False">
                     <syncfusion:GridTemplateColumn.CellTemplate>

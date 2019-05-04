@@ -50,7 +50,7 @@ namespace NEGOCIO
 
         public static DataTable Mostrar()
         {
-            return new DCliente().Mostrar();
+            return new DRepresentante().Mostrar();
         }
     }
 }

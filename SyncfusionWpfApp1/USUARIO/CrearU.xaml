@@ -40,7 +40,7 @@
             <RadioButton x:Name="tabpersona" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" Content="Datos de Ingreso"/>
             <RadioButton x:Name="tabimagen" Style="{StaticResource MaterialDesignTabRadioButton}" Margin="4" Content="Fotografia / Imagen"/>
         </StackPanel>
-        <Border Grid.Row="2" Name="borderbasico" Visibility="Collapsed">
+        <Border Grid.Row="2" Name="borderbasico" Visibility="Visible">
             <Grid>
                 <ToggleButton x:Name="checkestado" Margin="0,42,30,0" VerticalAlignment="Top" Click="Checkestado_Click" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignSwitchToggleButton}"/>
                 <Label Visibility="Visible" Content="{materialDesign:PackIcon Kind=User}" Margin="25,78,0,0" HorizontalAlignment="Left"
@@ -109,7 +109,7 @@
                 </ListBox>
             </Grid>
         </Border>
-        <Border Name="borderimagen" Visibility="Visible" Grid.Row="2">
+        <Border Name="borderimagen" Visibility="Collapsed" Grid.Row="2">
             <Grid>
                 <Border BorderBrush="Gray" BorderThickness="1.8" Width="200" Height="200" CornerRadius="150" HorizontalAlignment="Center" Margin="122,45,122,122">
                     <Image x:Name="img" Margin="-1,0,-1,-1"/>

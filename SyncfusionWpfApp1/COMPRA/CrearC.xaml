@@ -7,39 +7,88 @@
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="CrearC" MinHeight="512" MinWidth="1080">
+        Title="CrearC" MinHeight="512" MinWidth="1180">
     <Page.Resources>
         <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"/>
         <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}"/>
     </Page.Resources>
-    <Grid VerticalAlignment="Bottom" Margin="0,0,0,1" Height="533">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="121*"/>
-            <RowDefinition Height="412*"/>
-        </Grid.RowDefinitions>
-        <Label Content="{materialDesign:PackIcon Kind=ProfessionalHexagon}" Margin="20,65,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,54,0,0" Width="1004" materialDesign:HintAssist.Hint="Proveedor" Height="37"/>
-        <Label Content="{materialDesign:PackIcon Kind=FileDocumentOutline}" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
-        <TextBox HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,7,0,0" Width="282" materialDesign:HintAssist.Hint="Numero Factura" Height="37"/>
-        <Label Content="{materialDesign:PackIcon Kind=DateRange}" Margin="0,20,257,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="26" Width="26"/>
-        <syncfusion:DateTimeEdit IsButtonPopUpEnabled="False" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" 
+
+    <Grid>
+        <DockPanel LastChildFill="True">
+            <Grid DockPanel.Dock="Left" Width="80">
+                <StackPanel Orientation="Vertical">
+                    <Button Name="buttonbuscar" Height="80" Padding="0" Click="Buttonbuscar_Click">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <materialDesign:PackIcon Kind="Search" HorizontalAlignment="Center" Height="30" Width="30"/>
+                            <Label Content="BUSCAR" Grid.Row="1" Foreground="White"/>
+                        </Grid>
+                    </Button>
+                    <Button Name="buttonborrar" Height="80" Padding="0" Click="Buttonborrar_Click">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <materialDesign:PackIcon Kind="Delete" HorizontalAlignment="Center" Height="30" Width="30"/>
+                            <Label Content="BORRAR" Grid.Row="1" Foreground="White"/>
+                        </Grid>
+                    </Button>
+                    <Button Height="80" Padding="0" Name="buttonguardar" Click="Buttonguardar_Click">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <materialDesign:PackIcon Kind="CheckAll" HorizontalAlignment="Center" Height="30" Width="30"/>
+                            <Label Content="GUARDAR" Grid.Row="1" Foreground="White"/>
+                        </Grid>
+                    </Button>
+                    <Button Content="{materialDesign:PackIcon Kind=Search}" Height="80"/>
+                </StackPanel>
+            </Grid>
+            <Grid VerticalAlignment="Bottom" Margin="0,0,0,1" Height="533">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="121*"/>
+                    <RowDefinition Height="412*"/>
+                </Grid.RowDefinitions>
+                <Label Content="{materialDesign:PackIcon Kind=ProfessionalHexagon}" Margin="20,65,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
+                <TextBox Name="text_proveedor" PreviewMouseDown="TextBox_PreviewMouseDown" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="51,54,30,0" materialDesign:HintAssist.Hint="Proveedor" Height="37"/>
+                <Label Content="{materialDesign:PackIcon Kind=FileDocumentOutline}" Margin="20,20,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="26"/>
+                <TextBox Name="text_factura" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,7,0,0" Width="282" materialDesign:HintAssist.Hint="Numero Factura" Height="37"/>
+                <Label Content="{materialDesign:PackIcon Kind=DateRange}" Margin="0,20,257,0" HorizontalAlignment="Right" VerticalAlignment="Top" Height="26" Width="26"/>
+                <syncfusion:DateTimeEdit IsButtonPopUpEnabled="False" Height="27" TextWrapping="Wrap" Text="DateTimeEdit" 
                                          Pattern="CustomPattern" CustomPattern="dd/MM/yyyy" Visibility="Visible"
                                          Margin="0,20,30,0" VerticalAlignment="Top" x:Name="fechaproduccion" 
                                          DateTime="1993-09-05"
                                          HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="222"/>
 
-        <syncfusion:SfDataGrid x:Name="DataGridNumero" ItemsSource="{Binding}" AutoGenerateColumns="False" 
-                                       ColumnSizer="AutoWithLastColumnFill" Visibility="Visible" HorizontalAlignment="Stretch"
-                                       Margin="10,0" VerticalAlignment="Top" Grid.Row="1" Height="26">
-            <syncfusion:SfDataGrid.Columns>
-                <syncfusion:GridTextColumn HeaderText="Producto" TextAlignment="Center"/>
-                <syncfusion:GridTextColumn HeaderText = "Unidad de Compra" TextAlignment="Center"/>
-                <syncfusion:GridTextColumn HeaderText = "Cantidad" TextAlignment="Center"/>
-                <syncfusion:GridTextColumn HeaderText = "Piezas Contenidas" TextAlignment="Center"/>
-                <syncfusion:GridTextColumn HeaderText = "Precio Actual" TextAlignment="Center"/>
-                <syncfusion:GridTextColumn HeaderText = "Precio Nuevo" TextAlignment="Center"/>
-                <syncfusion:GridTextColumn HeaderText = "Costo Total" TextAlignment="Center"/>
-            </syncfusion:SfDataGrid.Columns>
-        </syncfusion:SfDataGrid>
+                <Button Name="borrarok" Click="Borrarok_Click" Visibility="Collapsed" Content="{materialDesign:PackIcon Kind=Check}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,2,79,0" Width="64" Grid.Row="1"/>
+                <Button Name="borrarcancel" Click="Borrarcancel_Click" Visibility="Collapsed" Content="{materialDesign:PackIcon Kind=Close}" HorizontalAlignment="Right" VerticalAlignment="Top" Grid.Row="1" Margin="0,2,10,0" Width="64"/>
+
+                <Label Content="Total: $" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,100,10" FontWeight="Medium" FontSize="16"/>
+                <Label Name="lbltotal" Content="" Grid.Row="1" VerticalAlignment="Bottom" Margin="0,0,22,10" FontWeight="Medium" FontSize="16" HorizontalAlignment="Right"/>
+                <syncfusion:SfDataGrid x:Name="DataGridNumero" ItemsSource="{Binding}" AutoGenerateColumns="False" 
+                                       Visibility="Visible" HorizontalAlignment="Stretch" MouseDoubleClick="DataGridNumero_MouseDoubleClick"
+                                       Margin="10,39,10,53" Grid.Row="1">
+                    <syncfusion:SfDataGrid.Columns>
+                        <syncfusion:GridTextColumn HeaderText="CODIGO BARRAS" TextAlignment="Center" MappingName="codigo"/>
+                        <syncfusion:GridTextColumn HeaderText="Producto" TextAlignment="Center" MappingName="producto"/>
+                        <syncfusion:GridTextColumn HeaderText = "Unidad de Compra" TextAlignment="Center" MappingName="unidad"/>
+                        <syncfusion:GridNumericColumn HeaderText = "Cantidad" TextAlignment="Center" MappingName="cantidad"/>
+                        <syncfusion:GridNumericColumn HeaderText = "Piezas Contenidas" TextAlignment="Center" MappingName="piezas"/>
+                        <syncfusion:GridPercentColumn HeaderText = "Precio Actual" TextAlignment="Center" MappingName="precioa"/>
+                        <syncfusion:GridPercentColumn HeaderText = "Precio Nuevo" TextAlignment="Center" MappingName="precion"/>
+                        <syncfusion:GridPercentColumn HeaderText = "Costo Total" TextAlignment="Center" MappingName="costo"/>
+                    </syncfusion:SfDataGrid.Columns>
+                </syncfusion:SfDataGrid>
+
+            </Grid>
+        </DockPanel>
+
     </Grid>
+
 </Page>

@@ -113,8 +113,12 @@
                     </ListBoxItem>
                 </ListBox>
                 <Button Name="buttondialogdir" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Añadido!!!" Visibility="Collapsed" Margin="0,215,0,0" Click="Buttondialogdir_Click"/>
-                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="55,0,0,32" Width="166" Height="42" Background="MediumVioletRed" Name="buttondialogtel" Click="Buttondialogtel_Click" Visibility="Collapsed"/>
-                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="257,0,0,32" Width="166" Height="42" Background="MediumVioletRed" x:Name="buttondialogcel" Click="Buttondialogcel_Click" Visibility="Collapsed"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="55,0,0,101"
+                        Width="156" Height="42" Background="MediumVioletRed" Name="buttondialogtel" Click="Buttondialogtel_Click"
+                        Visibility="Collapsed"/>
+                <Button HorizontalAlignment="Left" VerticalAlignment="Bottom" Content="Solo Numeros!!!" Margin="257,0,0,101"
+                        Width="156" Height="42" Background="MediumVioletRed" x:Name="buttondialogcel" Click="Buttondialogcel_Click"
+                        Visibility="Collapsed"/>
                 <TextBox Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}" Margin="55,0,35,10" VerticalAlignment="Bottom" Height="86" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" materialDesign:HintAssist.Hint="Añadir Comentario" Name="textdescripcion"/>
                 <Label Content="{materialDesign:PackIcon Kind=CommentTextMultipleOutline}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,417,0,0"/>
             </Grid>
@@ -186,6 +190,6 @@
         </Border>
 
         <Button HorizontalAlignment="Center" VerticalAlignment="Top" Height="36" Width="120" Grid.Row="3" Margin="157,10,165,0"
-                Content="Guardar" Name="buttonguardad"/>
+                Content="Guardar" Name="buttonguardar" Click="Buttonguardad_Click"/>
     </Grid>
 </Window>

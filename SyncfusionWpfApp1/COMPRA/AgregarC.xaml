@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SyncfusionWpfApp1.COMPRA"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AgregarC" Height="659.5" Width="562">
+        Title="AgregarC" Height="700.5" Width="562">
     <Window.Resources>
         <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}"/>
         <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}"/>
@@ -16,32 +16,33 @@
             <Grid>
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="104" Margin="10,257,0,0" CornerRadius="3"/>
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="145" Margin="10,54,0,0" CornerRadius="3"/>
+                <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="179" Margin="10,419,0,0" CornerRadius="3"/>
 
                 <Grid Name="gridproducto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="533" Height="145" Margin="10,54,0,0" DataContext="{Binding}">
-                <Label Content="{materialDesign:PackIcon Kind=Barcode}" Margin="10,21,0,0" VerticalAlignment="Top"
+                    <Label Content="{materialDesign:PackIcon Kind=Barcode}" Margin="10,21,0,0" VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
-                <Label Content="{materialDesign:PackIcon Kind=BarcodeScan}" Margin="268,21,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Label Content="{materialDesign:PackIcon Kind=Dropbox}" Margin="10,66,0,0" VerticalAlignment="Top" x:Name="LblNombre" HorizontalAlignment="Left"/>
-                <Label Content="{materialDesign:PackIcon Kind=ClipboardPulse}" Margin="10,111,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Label Margin="186,111,0,0" Content="{materialDesign:PackIcon Kind=ClipboardCheck}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                <Label Content="{materialDesign:PackIcon Kind=ClipboardAlert}" Margin="362,111,0,0" VerticalAlignment="Top"
+                    <Label Content="{materialDesign:PackIcon Kind=BarcodeScan}" Margin="268,21,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Label Content="{materialDesign:PackIcon Kind=Dropbox}" Margin="10,66,0,0" VerticalAlignment="Top" x:Name="LblNombre" HorizontalAlignment="Left"/>
+                    <Label Content="{materialDesign:PackIcon Kind=ClipboardPulse}" Margin="10,111,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                    <Label Margin="186,111,0,0" Content="{materialDesign:PackIcon Kind=ClipboardCheck}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <Label Content="{materialDesign:PackIcon Kind=ClipboardAlert}" Margin="362,111,0,0" VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
-                <TextBox Margin="41,55,0,0" x:Name="textnombre" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                    <TextBox Margin="41,55,0,0" x:Name="textnombre" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                          materialDesign:HintAssist.Hint="Nombre" HorizontalAlignment="Left" Width="476" Focusable="False" Background="LightGray"
                          Text="{Binding NOMBRE}"/>
-                <TextBox Margin="41,10,0,0" x:Name="textbarras" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
+                    <TextBox Margin="41,10,0,0" x:Name="textbarras" VerticalAlignment="Top" HorizontalAlignment="Left" TextWrapping="Wrap" 
                          CharacterCasing="Upper" materialDesign:HintAssist.Hint="Clave / Codigo de Barras" Width="218"
                          Focusable="False" Background="LightGray" Text="{Binding CODIGO}"/>
-                <TextBox Margin="299,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                    <TextBox Margin="299,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                          x:Name="textrapido" materialDesign:HintAssist.Hint="Codigo Rapido" Width="218" Focusable="False" Background="LightGray"
                          Text="{Binding CODIGORAPIDO}"/>
-                <TextBox  Margin="41,100,0,0" x:Name="textnombre_Copy" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                    <TextBox  Margin="41,100,0,0" x:Name="textnombre_Copy" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                           materialDesign:HintAssist.Hint="Existencia en Inventario" HorizontalAlignment="Left" Width="126" Focusable="False"
                           Background="LightGray" Text="{Binding STOCK}"/>
-                <TextBox  Margin="217,100,0,0" x:Name="textnombre_Copy1" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                    <TextBox  Margin="217,100,0,0" x:Name="textnombre_Copy1" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                           materialDesign:HintAssist.Hint="Maximo Permitido" HorizontalAlignment="Left" Width="126" Focusable="False" Background="LightGray"
                           Text="{Binding MAXIMO}"/>
-                <TextBox  Margin="393,100,0,0" x:Name="textnombre_Copy2" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
+                    <TextBox  Margin="393,100,0,0" x:Name="textnombre_Copy2" VerticalAlignment="Top" TextWrapping="Wrap" CharacterCasing="Upper"
                           materialDesign:HintAssist.Hint="Minimo Permitido" HorizontalAlignment="Left" Width="126" Focusable="False" Background="LightGray"
                           Text="{Binding MINIMO}"/>
                 </Grid>
@@ -49,14 +50,14 @@
                 <Label Content="{materialDesign:PackIcon Kind=Shopify}" HorizontalAlignment="Left" VerticalAlignment="Top"
                        Margin="18,281,0,0" x:Name="labelunidadcompra"/>
                 <ComboBox Margin="51,267,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Compra" HorizontalAlignment="Left"
-                          Width="218" x:Name="combounidadcompra" DisplayMemberPath="UNIDAD" SelectedValuePath="PRODUCTO"/>
+                          Width="218" x:Name="combounidadcompra" DisplayMemberPath="UNIDAD" SelectedValuePath="UNIDAD"/>
                 <Label Content="{materialDesign:PackIcon Kind=BasketFill}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,326,0,0" x:Name="labelcantidadpiezas"/>
                 <Label Content="{materialDesign:PackIcon Kind=CashMultiple}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,281,0,0" x:Name="labelcostocompra"/>
                 <Label Content="{materialDesign:PackIcon Kind=MoneyOff}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,326,0,0" x:Name="labelcostopieza"/>
                 <TextBox Margin="309,270,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo de Compra" HorizontalAlignment="Left" Width="218" x:Name="textcostocompra" Focusable="False" Background="LightGray"/>
-                <TextBox Margin="309,315,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo por pieza" HorizontalAlignment="Left" Width="218" x:Name="textcostopieza" Focusable="False" Background="LightGray"/>
+                <TextBox Margin="309,315,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo por Pieza" HorizontalAlignment="Left" Width="218" x:Name="textcostopieza" Focusable="False" Background="LightGray"/>
                 <TextBox Margin="51,315,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad de Piezas" HorizontalAlignment="Left" Width="218" x:Name="textcantidadpieza" Focusable="False" Background="LightGray"/>
-                
+
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="39" Margin="9,10,0,0" CornerRadius="3">
                     <TextBlock Text="Informacion Basica" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Opacity=".8"/>
                 </materialDesign:ColorZone>
@@ -66,27 +67,31 @@
                 <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="39" Margin="9,375,0,0" CornerRadius="3">
                     <TextBlock Text="Detalle de Compra (Nuevo)" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="16" Opacity=".8"/>
                 </materialDesign:ColorZone>
-                <materialDesign:ColorZone HorizontalAlignment="Left" VerticalAlignment="Top" Mode="Standard" Width="533" Height="120" Margin="10,419,0,0" CornerRadius="3"/>
                 <Label Content="{materialDesign:PackIcon Kind=Shopify}" HorizontalAlignment="Left" VerticalAlignment="Top"
                     Margin="18,459,0,0" x:Name="labelunidadcompra_Copy"/>
-                <ComboBox Margin="51,445,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Compra" HorizontalAlignment="Left" Width="191" x:Name="combounidadcompra_Copy"/>
-
-                <ListBox x:Name="listdireccion" HorizontalAlignment="Left" Height="auto" Margin="247,463,0,0" 
-                         VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" 
-                         Background="{StaticResource PrimaryHueMidBrush}" Foreground="White">
-                    <ListBoxItem x:Name="itemdiradd" Padding="0" ToolTip="Crear Nuevo">
-                        <materialDesign:PackIcon Kind="PlusOutline"/>
-                    </ListBoxItem>
-                </ListBox>
+                <ComboBox Visibility="Collapsed" Margin="51,445,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Compra" HorizontalAlignment="Left" Width="218" x:Name="combonuevounidadcompra"
+                          DisplayMemberPath="UNIDAD" SelectedValuePath="PRODUCTO"/>
+                <TextBox Margin="49,447,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Compra" HorizontalAlignment="Left" Width="218" x:Name="textnuevounidadcompra"/>
 
                 <Label Content="{materialDesign:PackIcon Kind=BasketFill}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,504,0,0" x:Name="labelcantidadpiezas_Copy"/>
                 <Label Content="{materialDesign:PackIcon Kind=CashMultiple}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,459,0,0" x:Name="labelcostocompra_Copy"/>
                 <Label Content="{materialDesign:PackIcon Kind=MoneyOff}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="278,504,0,0" x:Name="labelcostopieza_Copy"/>
-                <TextBox Margin="309,448,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo de Compra" HorizontalAlignment="Left" Width="218" x:Name="textcostocompra_Copy"/>
-                <TextBox Margin="309,493,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad" HorizontalAlignment="Left" Width="218" x:Name="textcostopieza_Copy"/>
-                <TextBox Margin="51,493,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad de Piezas" HorizontalAlignment="Left" Width="218" x:Name="textcantidadpieza_Copy"/>
+                <TextBox Margin="309,448,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo de Compra" HorizontalAlignment="Left" Width="218" x:Name="textnuevocostocompra"/>
+                <TextBox Margin="309,493,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Costo por Pieza" HorizontalAlignment="Left" Width="218" x:Name="textnuevocostopieza"/>
+                <TextBox Margin="51,493,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad de Piezas" HorizontalAlignment="Left" Width="218" x:Name="textnuevocantidadpieza"/>
+                <ListBox x:Name="listnuevacompramenu" HorizontalAlignment="Left" Height="auto" Margin="483,419,0,0" VerticalAlignment="Top" Width="auto" Style="{StaticResource MaterialDesignToolToggleListBox}" Background="{StaticResource PrimaryHueMidBrush}" Foreground="White" RenderTransformOrigin="0.5,0.5" SelectionChanged="Listnuevacompramenu_SelectionChanged">
+                    <ListBoxItem x:Name="itemdowncompra" Padding="0" ToolTip="Usar Costos Historicos / Modificar Costo">
+                        <materialDesign:PackIcon Kind="ArrowDown"/>
+                    </ListBoxItem>
+                    <ListBoxItem x:Name="itemnuevo" Padding="0" ToolTip="Crear Nuevo Costo">
+                        <materialDesign:PackIcon Kind="Plus"/>
+                    </ListBoxItem>
+                </ListBox>
 
-                <Button Content="Agregar" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="138" Margin="208,0,208,22"/>
+                <Button Name="buttonagregar" Click="Buttonagregar_Click" Content="Agregar" HorizontalAlignment="Center" VerticalAlignment="Bottom"  Width="138" Margin="208,0,208,22"/>
+                <TextBox Margin="49,539,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad a Comprar" HorizontalAlignment="Left" Width="478" x:Name="textcantidad"/>
+                <Label Content="{materialDesign:PackIcon Kind=BasketFill}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="18,550,0,0" x:Name="labelcantidadpiezas_Copy1"/>
+
             </Grid>
         </Border>
     </Grid>
