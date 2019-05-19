@@ -26,7 +26,7 @@ namespace SyncfusionWpfApp1.COMPRA
         {
             InitializeComponent();
             sfdtgrid.DataContext = NProducto.Mostrar();
-            data = sfdtgrid.DataContext as DataTable;
+            //data = sfdtgrid.DataContext as DataTable;
         }
 
         private void Textbuscar_KeyDown(object sender, KeyEventArgs e)
@@ -60,16 +60,16 @@ namespace SyncfusionWpfApp1.COMPRA
 
             Inter.pasaritem(Id, Codigo, Producto);
 
-            for (int i = data.Rows.Count - 1; i >= 0; i--)
-            {
-                if (dr["ID"].Equals(data.Rows[i]["ID"]))
-                {
-                    data.Rows.RemoveAt(i);
-                    break;
-                }
-            }
+            //for (int i = data.Rows.Count - 1; i >= 0; i--)
+            //{
+            //    if (dr["ID"].Equals(data.Rows[i]["ID"]))
+            //    {
+            //        data.Rows.RemoveAt(i);
+            //        break;
+            //    }
+            //}
 
-            sfdtgrid.DataContext = data;
+            //sfdtgrid.DataContext = data;
         }
     }
 }

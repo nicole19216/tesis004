@@ -55,6 +55,7 @@
     <Compile Include="DModulo.cs" />
     <Compile Include="DNumero.cs" />
     <Compile Include="DPersona.cs" />
+    <Compile Include="DPresentacion.cs" />
     <Compile Include="DPrivilegio.cs" />
     <Compile Include="DProducto.cs" />
     <Compile Include="DProveedor.cs" />

@@ -14,12 +14,12 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using NEGOCIO;
 
-namespace SyncfusionWpfApp1.COMPRA
+namespace SyncfusionWpfApp1.COTIZACION
 {
     /// <summary>
     /// Lógica de interacción para CrearC.xaml
     /// </summary>
-    public partial class CrearC : Page,Interface1
+    public partial class CrearCo : Page
     {
 
         private DataTable item;
@@ -57,14 +57,14 @@ namespace SyncfusionWpfApp1.COMPRA
         {
             int contador = 0;
 
-            if (string.IsNullOrEmpty(text_factura.Text) || string.IsNullOrWhiteSpace(text_factura.Text))
+            if (string.IsNullOrEmpty(text_cotizacion.Text) || string.IsNullOrWhiteSpace(text_cotizacion.Text))
             {
-                text_factura.BorderBrush = new SolidColorBrush(Colors.Red);
+                text_cotizacion.BorderBrush = new SolidColorBrush(Colors.Red);
                 contador++;
             }
-            if (string.IsNullOrEmpty(text_proveedor.Text) || string.IsNullOrWhiteSpace(text_proveedor.Text))
+            if (string.IsNullOrEmpty(text_cliente.Text) || string.IsNullOrWhiteSpace(text_cliente.Text))
             {
-                text_proveedor.BorderBrush = new SolidColorBrush(Colors.Red);
+                text_cliente.BorderBrush = new SolidColorBrush(Colors.Red);
                 contador++;
             }
             if (item.Rows.Count <= 0)
@@ -72,18 +72,16 @@ namespace SyncfusionWpfApp1.COMPRA
 
             return contador;
         }
-
-        public CrearC()
+        public CrearCo()
         {
             InitializeComponent();
-            crear_tablas();
         }
 
-        public void pasaritem(int id,string codigo,string nombre)
+        public void pasaritem(int id, string codigo, string nombre)
         {
             int contador = 0;
 
-            if (item.Rows.Count>0)
+            if (item.Rows.Count > 0)
             {
                 foreach (DataRow dataRow in item.Rows)
                 {
@@ -94,8 +92,8 @@ namespace SyncfusionWpfApp1.COMPRA
                     }
                 }
             }
-            
-            if (contador<=0)
+
+            if (contador <= 0)
             {
                 DataRow row = item.NewRow();
                 row["id"] = id;
@@ -112,7 +110,7 @@ namespace SyncfusionWpfApp1.COMPRA
                 DataGridNumero.GridColumnSizer.ResetAutoCalculationforAllColumns();
                 DataGridNumero.GridColumnSizer.Refresh();
             }
-            
+
 
             aux = item.Copy();
             //DataRow data = aux.NewRow();
@@ -130,7 +128,7 @@ namespace SyncfusionWpfApp1.COMPRA
 
         public void pasarproveedor(int id, string nombre)
         {
-            text_proveedor.Text = nombre;
+            text_cliente.Text = nombre;
             id_pro = id;
         }
 
@@ -172,36 +170,36 @@ namespace SyncfusionWpfApp1.COMPRA
 
         private void Buttonbuscar_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                BuscarProductoC buscarProductoC = new BuscarProductoC();
-                buscarProductoC.Inter = this;
-                buscarProductoC.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    BuscarProductoC buscarProductoC = new BuscarProductoC();
+            //    buscarProductoC.Inter = this;
+            //    buscarProductoC.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void DataGridNumero_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            try
-            {
-                if (DataGridNumero.SelectedItem == null)
-                    return;
+            //try
+            //{
+            //    if (DataGridNumero.SelectedItem == null)
+            //        return;
 
-                DataRowView dr = DataGridNumero.SelectedItem as DataRowView;
-                //MessageBox.Show(dr["MARCA"].ToString());
-                AgregarC agregar = new AgregarC((int)dr["id"]);
-                //agregar.idp = (int)dr["ID"];
-                agregar.Inter = this;
-                agregar.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //    DataRowView dr = DataGridNumero.SelectedItem as DataRowView;
+            //    //MessageBox.Show(dr["MARCA"].ToString());
+            //    AgregarC agregar = new AgregarC((int)dr["id"]);
+            //    //agregar.idp = (int)dr["ID"];
+            //    agregar.Inter = this;
+            //    agregar.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void Buttonborrar_Click(object sender, RoutedEventArgs e)
@@ -219,7 +217,7 @@ namespace SyncfusionWpfApp1.COMPRA
         {
             foreach (DataRowView drv in DataGridNumero.SelectedItems)
             {
-                for (int i = aux.Rows.Count-1; i >=0 ; i--)
+                for (int i = aux.Rows.Count - 1; i >= 0; i--)
                 {
                     if (drv["id"].Equals(aux.Rows[i]["id"]))
                     {
@@ -258,7 +256,7 @@ namespace SyncfusionWpfApp1.COMPRA
         {
             if (validar_campos() <= 0)
             {
-                string resp = NCompra.Insertar(id_pro, 16, text_factura.Text, fechaproduccion.DateTime.Value, item);
+                string resp = NCompra.Insertar(id_pro, 16, text_cotizacion.Text, fechaproduccion.DateTime.Value, item);
 
                 if (resp.Equals("OK"))
                     MessageBox.Show("PROVEEDOR REGISTRADO CORRECTAMENTE");
@@ -273,18 +271,18 @@ namespace SyncfusionWpfApp1.COMPRA
 
         private void TextBox_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
-            try
-            {
-                BuscarProveedorC proveedorC = new BuscarProveedorC();
-                proveedorC.Interface1 = this;
-                proveedorC.ShowDialog();
-            }
-            catch (Exception ex)
-            {
+            //try
+            //{
+            //    BuscarProveedorC proveedorC = new BuscarProveedorC();
+            //    proveedorC.Interface1 = this;
+            //    proveedorC.ShowDialog();
+            //}
+            //catch (Exception ex)
+            //{
 
-                MessageBox.Show(ex.Message);
-            }
-            
+            //    MessageBox.Show(ex.Message);
+            //}
+
         }
     }
 }

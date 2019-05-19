@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SyncfusionWpfApp1.COTIZACION
+namespace SyncfusionWpfApp1.PRODUCTO
 {
     /// <summary>
-    /// Lógica de interacción para CrearC.xaml
+    /// Lógica de interacción para CrearPresentacion.xaml
     /// </summary>
-    public partial class CrearC : Window
+    public partial class CrearPresentacion : Page
     {
-        public CrearC()
+        public CrearPresentacion()
         {
             InitializeComponent();
         }

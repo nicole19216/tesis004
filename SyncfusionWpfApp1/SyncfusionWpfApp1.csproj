@@ -109,8 +109,8 @@
     </Compile>
     <Compile Include="COMPRA\Interface1.cs" />
     <Compile Include="COMPRA\Interface2.cs" />
-    <Compile Include="COTIZACION\CrearC.xaml.cs">
-      <DependentUpon>CrearC.xaml</DependentUpon>
+    <Compile Include="COTIZACION\CrearCo.xaml.cs">
+      <DependentUpon>CrearCo.xaml</DependentUpon>
     </Compile>
     <Compile Include="HELPERS\MergedCellBahavior.cs" />
     <Compile Include="HELPERS\NotEmptyValidationRule.cs" />
@@ -128,6 +128,9 @@
     </Compile>
     <Compile Include="PRODUCTO\CrearP.xaml.cs">
       <DependentUpon>CrearP.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PRODUCTO\CrearPresentacion.xaml.cs">
+      <DependentUpon>CrearPresentacion.xaml</DependentUpon>
     </Compile>
     <Compile Include="PRODUCTO\CrearUbicacionP.xaml.cs">
       <DependentUpon>CrearUbicacionP.xaml</DependentUpon>
@@ -183,7 +186,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="COTIZACION\CrearC.xaml">
+    <Page Include="COTIZACION\CrearCo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -216,6 +219,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PRODUCTO\CrearP.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PRODUCTO\CrearPresentacion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -328,6 +335,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="RECURSOS\ICONOS\icons8_Gmail_96px_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="RECURSOS\IMAGENES\1A2.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
