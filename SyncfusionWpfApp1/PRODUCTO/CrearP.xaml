@@ -158,7 +158,7 @@
         </Border>
         <Border Name="borderventa" Visibility="Visible" Grid.Row="2">
             <Grid>
-                <materialDesign:ColorZone Mode="Standard" HorizontalAlignment="Left" VerticalAlignment="Top" Height="148" Width="518" Margin="10,33,0,0" CornerRadius="3"/>
+                <materialDesign:ColorZone Mode="Standard" HorizontalAlignment="Left" VerticalAlignment="Top" Height="114" Width="518" Margin="10,33,0,0" CornerRadius="3"/>
                 <Label Content="{materialDesign:PackIcon Kind=Shopify}" HorizontalAlignment="Left" VerticalAlignment="Top"
                        Margin="34,54,0,0" Name="labelunidadventa"/>
                 <TextBox Margin="65,40,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Unidad de Venta"
@@ -169,38 +169,28 @@
                        Name="labelcostocompra1"/>
                 <Label Content="{materialDesign:PackIcon Kind=MoneyOff}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="301,101,0,0"
                        Name="labelcostopieza1"/>
-                <TextBox Margin="332,43,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad Piezas"
-                          HorizontalAlignment="Left" Width="170" x:Name="textcantidadpiezaventa"/>
+                <TextBox Margin="65,90,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Cantidad Piezas"
+                          HorizontalAlignment="Left" Width="174" x:Name="textcantidadpiezaventa"/>
                 <TextBox Margin="332,90,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Precio pieza"
                           HorizontalAlignment="Left" Width="170" x:Name="textpreciopieza" IsEnabled="True" Focusable="False"/>
-                <TextBox Margin="65,90,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="% Utilidad Pieza"
-                          HorizontalAlignment="Left" Width="174" x:Name="textutilidadpieza" Focusable="False"/>
-                <TextBox Margin="65,135,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="% Utilidad Venta"
-                    HorizontalAlignment="Left" Width="174" x:Name="textutilidadventa" Focusable="False"/>
-                <TextBox Margin="332,136,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Precio Venta Total"
+                <TextBox Margin="332,40,0,0" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Precio Venta Total"
                     HorizontalAlignment="Left" Width="170" x:Name="textprecioventatotal" IsEnabled="True" />
-                <Label Content="{materialDesign:PackIcon Kind=BasketFill}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="34,147,0,0"
-                    x:Name="labelcantidadpiezas1_Copy"/>
-                <Label Content="{materialDesign:PackIcon Kind=MoneyOff}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="301,146,0,0"
-                    x:Name="labelcostopieza1_Copy"/>
 
-                <syncfusion:SfDataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="113" Width="519" Margin="10,224,0,0">
+                <syncfusion:SfDataGrid HorizontalAlignment="Left" VerticalAlignment="Top" Height="144" Width="519" Margin="10,193,0,0" Name="dtgventa">
                     <syncfusion:SfDataGrid.Columns>
                         <syncfusion:GridTextColumn HeaderText="Unidad" MappingName="unidad_venta"/>
                         <syncfusion:GridNumericColumn HeaderText="Cantidad Piezas" MappingName="cantidad_pieza"/>
-                        <syncfusion:GridPercentColumn HeaderText="% Utilidad Pieza" MappingName="utilidad_pieza"/>
                         <syncfusion:GridNumericColumn HeaderText="Precio Pieza" MappingName="precio_pieza"/>
-                        <syncfusion:GridPercentColumn HeaderText="% Utilidad Venta" MappingName="utilidad_venta"/>
                         <syncfusion:GridPercentColumn HeaderText="Precio Venta" MappingName="precio_venta"/>
                     </syncfusion:SfDataGrid.Columns>
                 </syncfusion:SfDataGrid>
-                <Button Name="button_añadir_venta" Content="Añadir" HorizontalAlignment="Left" Margin="185,187,0,0" VerticalAlignment="Top" Width="75"
+                <Button Name="button_añadir_venta" Content="Añadir" HorizontalAlignment="Left" Margin="185,154,0,0" VerticalAlignment="Top" Width="75"
                         Click="Button_añadir_venta_Click"/>
                 <Label HorizontalAlignment="Right" VerticalAlignment="Top" Content="Activar/Desactivar" Foreground="Gray"
                        Margin="0,13,49,0" Width="105" HorizontalContentAlignment="Right" x:Name="labelventa"/>
                 <ToggleButton Style="{StaticResource MaterialDesignSwitchToggleButton}" VerticalAlignment="Top"
                               HorizontalAlignment="Right" Margin="0,17,10,0" x:Name="toggleven" Checked="Toggleven_Checked" Unchecked="Toggleven_Unchecked"/>
-                <Button Name="button_quitar_venta" Content="Quitar" HorizontalAlignment="Left" Margin="265,187,0,0" VerticalAlignment="Top" Width="75"
+                <Button Name="button_quitar_venta" Content="Quitar" HorizontalAlignment="Left" Margin="265,154,0,0" VerticalAlignment="Top" Width="75"
                         Click="Button_quitar_venta_Click"/>
             </Grid>
         </Border>

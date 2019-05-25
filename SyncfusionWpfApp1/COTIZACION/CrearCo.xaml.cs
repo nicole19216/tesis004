@@ -19,7 +19,7 @@ namespace SyncfusionWpfApp1.COTIZACION
     /// <summary>
     /// Lógica de interacción para CrearC.xaml
     /// </summary>
-    public partial class CrearCo : Page
+    public partial class CrearCo : Page,Interface1
     {
 
         private DataTable item;
@@ -170,16 +170,16 @@ namespace SyncfusionWpfApp1.COTIZACION
 
         private void Buttonbuscar_Click(object sender, RoutedEventArgs e)
         {
-            //try
-            //{
-            //    BuscarProductoC buscarProductoC = new BuscarProductoC();
-            //    buscarProductoC.Inter = this;
-            //    buscarProductoC.ShowDialog();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            try
+            {
+                BuscarProductoCO buscarProductoCO = new BuscarProductoCO();
+                buscarProductoCO.Inter = this;
+                buscarProductoCO.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void DataGridNumero_MouseDoubleClick(object sender, MouseButtonEventArgs e)

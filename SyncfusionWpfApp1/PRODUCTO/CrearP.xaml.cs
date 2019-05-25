@@ -234,6 +234,23 @@ namespace SyncfusionWpfApp1.PRODUCTO
             //dataSet.Tables.Add(table);
             //listcost.DataContext = dataSet;
             textcostopiezacompra.GotFocus += Textcostopieza_GotFocus;
+            textpreciopieza.GotFocus += Textpreciopieza_GotFocus;
+        }
+
+        private void Textpreciopieza_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (!string.IsNullOrEmpty(textcantidadpiezaventa.Text) && !string.IsNullOrWhiteSpace(textcantidadpiezaventa.Text)
+               && !string.IsNullOrEmpty(textprecioventatotal.Text) && !string.IsNullOrWhiteSpace(textprecioventatotal.Text)
+               && decimal.TryParse(textprecioventatotal.Text, out decimal d) && int.TryParse(textcantidadpiezaventa.Text, out int i))
+            {
+                decimal preciopieza = Convert.ToDecimal(textprecioventatotal.Text) / Convert.ToInt32(textcantidadpiezaventa.Text);
+                textpreciopieza.Text = decimal.Round(preciopieza, 2).ToString();
+            }
+            else
+            {
+                textpreciopieza.Text = "Datos incorrectos para el calculo";
+                textpreciopieza.Foreground = new SolidColorBrush(Colors.Gray);
+            }
         }
 
         public byte[] getJPGFromImageControl(BitmapImage imageC)
@@ -599,51 +616,58 @@ namespace SyncfusionWpfApp1.PRODUCTO
         {
             textunidadventa.IsEnabled = true;
             textcantidadpiezaventa.IsEnabled = true;
-            textutilidadpieza.IsEnabled = true;
             textpreciopieza.IsEnabled = true;
-            textutilidadventa.IsEnabled = true;
             textprecioventatotal.IsEnabled = true;
         }
         private void Toggleven_Unchecked(object sender, RoutedEventArgs e)
         {
             textunidadventa.IsEnabled = false;
             textcantidadpiezaventa.IsEnabled = false;
-            textutilidadpieza.IsEnabled = false;
             textpreciopieza.IsEnabled = false;
-            textutilidadventa.IsEnabled = false;
             textprecioventatotal.IsEnabled = false;
         }
 
         private void Button_añadir_venta_Click(object sender, RoutedEventArgs e)
         {
-            if (!string.IsNullOrEmpty(textcostocompra.Text) && !string.IsNullOrWhiteSpace(textcostocompra.Text) &&
-                    !string.IsNullOrEmpty(textunidadcompra.Text) && !string.IsNullOrWhiteSpace(textunidadcompra.Text) &&
-                    !string.IsNullOrEmpty(textcantidadpiezacompra.Text) && !string.IsNullOrWhiteSpace(textcantidadpiezacompra.Text) &&
-                    decimal.TryParse(textcostocompra.Text, out decimal d) && int.TryParse(textcantidadpiezacompra.Text, out int i))
+            if (!string.IsNullOrEmpty(textunidadventa.Text) && !string.IsNullOrWhiteSpace(textunidadventa.Text) 
+               && !string.IsNullOrEmpty(textcantidadpiezaventa.Text) && !string.IsNullOrWhiteSpace(textcantidadpiezaventa.Text) 
+               && !string.IsNullOrEmpty(textprecioventatotal.Text) && !string.IsNullOrWhiteSpace(textprecioventatotal.Text) 
+               && decimal.TryParse(textprecioventatotal.Text, out decimal d) && int.TryParse(textcantidadpiezaventa.Text, out int i))
             {
-                DataRow row = dtcosto.NewRow();
-                row["unidad_compra"] = textunidadcompra.Text;
-                row["precio"] = Convert.ToDecimal(textcostocompra.Text);
-                row["cantidad_piezas"] = Convert.ToInt32(textcantidadpiezacompra.Text);
-                row["costo_pieza"] = Convert.ToDecimal(textcostopiezacompra.Text);
-                dtcosto.Rows.Add(row);
+                DataRow row = dtventa.NewRow();
+                row["unidad_venta"] = textunidadventa.Text;
+                row["cantidad_pieza"] = Convert.ToInt32(textcantidadpiezaventa.Text);
+                row["precio_pieza"] = Convert.ToDecimal(textpreciopieza.Text);
+                row["precio_venta"] = Convert.ToDecimal(textprecioventatotal.Text);
+                dtventa.Rows.Add(row);
 
-                dtgcosto.DataContext = dtcosto;
-                dtcopycosto = dtcosto.Copy();
+                dtgventa.DataContext = dtventa;
+                dtcopyventa = dtventa.Copy();
             }
-
-
-            dtventa.Columns.Add("unidad_venta", Type.GetType("System.String"));
-            dtventa.Columns.Add("cantidad_pieza", Type.GetType("System.Int32"));
-            dtventa.Columns.Add("utilidad_pieza", Type.GetType("System.Decimal"));
-            dtventa.Columns.Add("precio_pieza", Type.GetType("System.Decimal"));
-            dtventa.Columns.Add("utilidad_venta", Type.GetType("System.Decimal"));
-            dtventa.Columns.Add("precio_venta", Type.GetType("System.Decimal"));
+            else
+            {
+                MessageBox.Show("Llene los campos correctamente");
+            }
         }
 
         private void Button_quitar_venta_Click(object sender, RoutedEventArgs e)
         {
+            foreach (DataRowView drv in dtgventa.SelectedItems)
+            {
+                for (int i = dtcopyventa.Rows.Count - 1; i >= 0; i--)
+                {
+                    if (drv["unidad_venta"].Equals(dtcopyventa.Rows[i]["unidad_venta"]))
+                    {
+                        dtcopyventa.Rows.RemoveAt(i);
+                        break;
+                    }
+                }
+            }
 
+            dtventa = dtcopyventa.Copy();
+            dtgventa.DataContext = dtventa;
+            dtgventa.GridColumnSizer.ResetAutoCalculationforAllColumns();
+            dtgventa.GridColumnSizer.Refresh();
         }
 
         private void Button_añadir_costo_Click(object sender, RoutedEventArgs e)
@@ -662,6 +686,10 @@ namespace SyncfusionWpfApp1.PRODUCTO
 
                 dtgcosto.DataContext = dtcosto;
                 dtcopycosto = dtcosto.Copy();
+            }
+            else
+            {
+                MessageBox.Show("Llene los campos correctamente");
             }
         }
 

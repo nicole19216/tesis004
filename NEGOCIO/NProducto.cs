@@ -130,9 +130,7 @@ namespace NEGOCIO
                 DPresentacion dPresentacion = new DPresentacion();
                 dPresentacion.Nombre = Convert.ToString(fila["unidad_venta"]);
                 dPresentacion.Cantidad_pieza = Convert.ToInt32(fila["cantidad_pieza"]);
-                dPresentacion.Utilidad_pieza = Convert.ToDecimal(fila["utilidad_pieza"]);
                 dPresentacion.Precio_pieza= Convert.ToDecimal(fila["precio_pieza"]);
-                dPresentacion.Utilidad_venta= Convert.ToDecimal(fila["utilidad_venta"]);
                 dPresentacion.Precio_venta= Convert.ToDecimal(fila["precio_venta"]);
                 dPresentacions.Add(dPresentacion);
             }
